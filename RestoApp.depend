@@ -1,0 +1,122 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\castillo\desktop\matias\utn\restoapp\main.cpp
+	<iostream>
+
+1621201066 source:c:\users\castillo\desktop\matias\utn\restoapp\src\alimentos.cpp
+	"Alimentos.h"
+
+1621201066 c:\users\castillo\desktop\matias\utn\restoapp\include\alimentos.h
+	<iostream>
+	<cstring>
+	<cstdio>
+	"Fecha.h"
+
+1621200539 source:c:\users\castillo\desktop\matias\utn\restoapp\src\fecha.cpp
+	"Fecha.h"
+
+1621200646 c:\users\castillo\desktop\matias\utn\restoapp\include\fecha.h
+	<iostream>
+	<cstring>
+	<cstdio>
+
+1621966819 source:c:\users\braian\desktop\restoapp\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"MenuPrincipal.h"
+	"Mesas.h"
+
+1621883798 source:c:\users\braian\desktop\restoapp\src\alimentos.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Alimentos.h"
+
+1621883571 c:\users\braian\desktop\restoapp\include\alimentos.h
+	"Fecha.h"
+
+1621879454 c:\users\braian\desktop\restoapp\include\fecha.h
+
+1621968428 source:c:\users\braian\desktop\restoapp\src\cliente.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Cliente.h"
+
+1621891701 c:\users\braian\desktop\restoapp\include\cliente.h
+	"Persona.h"
+	"Fecha.h"
+
+1621879075 source:c:\users\braian\desktop\restoapp\src\fecha.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<ctime>
+	"Fecha.h"
+
+1621900000 source:c:\users\braian\desktop\restoapp\src\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Persona.h"
+
+1621881490 c:\users\braian\desktop\restoapp\include\persona.h
+
+1621885011 c:\users\braian\desktop\restoapp\include\mercaderias.h
+	"Fecha.h"
+
+1621885054 source:c:\users\braian\desktop\restoapp\src\mercaderias.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Mercaderias.h"
+
+1621887196 source:c:\users\braian\desktop\restoapp\src\menuprincipal.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"MenuDeClientes.h"
+
+1621886751 c:\users\braian\desktop\restoapp\include\menuprincipal.h
+
+1621968763 source:c:\users\braian\desktop\restoapp\src\menudeclientes.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"MenuDeClientes.h"
+	"FuncionesClientes.h"
+
+1621886751 c:\users\braian\desktop\restoapp\include\menudeclientes.h
+
+1621968763 source:c:\users\braian\desktop\restoapp\src\funcionesclientes.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"FuncionesClientes.h"
+	"Fecha.h"
+	"Cliente.h"
+	"Mesas.h"
+
+1621968763 c:\users\braian\desktop\restoapp\include\funcionesclientes.h
+
+1621891991 source:c:\users\braian\desktop\restoapp\src\mesas.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Mesas.h"
+
+1621891153 c:\users\braian\desktop\restoapp\include\mesas.h
+
