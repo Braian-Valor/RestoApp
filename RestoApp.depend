@@ -120,3 +120,126 @@
 
 1621891153 c:\users\braian\desktop\restoapp\include\mesas.h
 
+1622419506 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"MenuPrincipal.h"
+	"Mesas.h"
+	"Carta.h"
+
+1622417351 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\menuprincipal.h
+
+1622417351 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\mesas.h
+
+1622417351 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\cliente.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Cliente.h"
+
+1622417351 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\cliente.h
+	"Persona.h"
+	"Fecha.h"
+
+1622417351 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\persona.h
+
+1622417351 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\fecha.h
+
+1622417351 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\fecha.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<ctime>
+	"Fecha.h"
+
+1622417351 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\funcionesclientes.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"FuncionesClientes.h"
+	"Fecha.h"
+	"Cliente.h"
+	"Mesas.h"
+
+1622417351 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\funcionesclientes.h
+
+1622422246 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\menudeclientes.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"MenuDeClientes.h"
+	"FuncionesClientes.h"
+
+1622417351 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\menudeclientes.h
+
+1622424626 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\menuprincipal.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"MenuDeClientes.h"
+
+1622417351 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\mercaderias.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Mercaderias.h"
+
+1622417351 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\mercaderias.h
+	"Fecha.h"
+
+1622417351 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\mesas.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Mesas.h"
+
+1622417351 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Persona.h"
+
+1622533979 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\carta.h
+
+1622535171 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\carta.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Carta.h"
+
+1622536758 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\detalleventa.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"DetalleVenta.h"
+	"Carta.h"
+
+1622534499 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\detalleventa.h
+	"Fecha.h"
+
+1622540200 source:c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\src\ventas.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Ventas.h"
+
+1622537772 c:\users\nicolás de cecco\desktop\utn\lab_ii\restoapp\restoapp\include\ventas.h
+	"Fecha.h"
+	"DetalleVenta.h"
+

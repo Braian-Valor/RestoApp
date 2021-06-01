@@ -5,6 +5,7 @@
 using namespace std;
 #include "MenuPrincipal.h"
 #include "Mesas.h"
+#include "Carta.h"
 
 int main() {
     menuPrincipal();

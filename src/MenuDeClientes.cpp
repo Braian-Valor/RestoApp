@@ -8,7 +8,7 @@ using namespace std;
 #include "FuncionesClientes.h"
 
 void dibujarMenuDeClientes(){
-    cout << "     MENUT CLIENTES           " << endl;
+    cout << "     MENU CLIENTES           " << endl;
     cout << " ---------------------------- " << endl;
     cout << " 1 - REGISTRAR                " << endl;
     cout << " 2 - MODIFICAR/ACTUALIZAR     " << endl;
