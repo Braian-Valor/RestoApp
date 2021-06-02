@@ -78,13 +78,14 @@
 	<cstring>
 	"Mercaderias.h"
 
-1622674350 source:c:\users\braian\desktop\restoapp\src\menuprincipal.cpp
+1622675228 source:c:\users\braian\desktop\restoapp\src\menuprincipal.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	<locale.h>
 	"MenuDeClientes.h"
+	"MenuDeMesas.h"
 
 1622674350 c:\users\braian\desktop\restoapp\include\menuprincipal.h
 
@@ -284,7 +285,7 @@
 	"Fecha.h"
 	"DetalleVenta.h"
 
-1622674350 source:c:\users\braian\desktop\restoapp\src\menudemesas.cpp
+1622674994 source:c:\users\braian\desktop\restoapp\src\menudemesas.cpp
 	"MenuDeMesas.h"
 
 1622674350 c:\users\braian\desktop\restoapp\include\menudemesas.h
