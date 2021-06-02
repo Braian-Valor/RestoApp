@@ -42,7 +42,7 @@ void leermesas(Mesas *vec,int tam)
 
 void ListadoMesas()
 {
-    Mesas obj;
+
     int cr,t;
     FILE *p;
     p=fopen("datos/mesas.dat","rb");
@@ -119,7 +119,7 @@ void Buscar_Mesa()
     obj.Mostrar();
     cin.get();
 }
-
+/*
 void HacerReserva()
 {
     Mesas obj;
@@ -142,3 +142,4 @@ void HacerReserva()
         cout << "No se ha podido añadir la reserva"<<endl;
     }
 }
+*/
