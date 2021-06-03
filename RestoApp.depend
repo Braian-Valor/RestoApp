@@ -59,14 +59,14 @@
 	<ctime>
 	"Fecha.h"
 
-1622674350 source:c:\users\braian\desktop\restoapp\src\persona.cpp
+1622757013 source:c:\users\braian\desktop\restoapp\src\persona.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Persona.h"
 
-1622674350 c:\users\braian\desktop\restoapp\include\persona.h
+1622756964 c:\users\braian\desktop\restoapp\include\persona.h
 
 1622674350 c:\users\braian\desktop\restoapp\include\mercaderias.h
 	"Fecha.h"
@@ -100,7 +100,7 @@
 
 1622674350 c:\users\braian\desktop\restoapp\include\menudeclientes.h
 
-1622674350 source:c:\users\braian\desktop\restoapp\src\funcionesclientes.cpp
+1622756759 source:c:\users\braian\desktop\restoapp\src\funcionesclientes.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>

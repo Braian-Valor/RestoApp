@@ -6,6 +6,7 @@ class Persona{
         char _nombre[50];
         char _apellido[50];
         int _edad;
+        int _DNI;
 
     public:
         /// CONSTRUCTOR
@@ -15,11 +16,13 @@ class Persona{
         void setNombre(char *nombre);
         void setApellido(char *apellido);
         void setEdad(int edad);
+        void setDNI(int DNI);
 
         /// GETS
         char *getNombre();
         char *getApellido();
         int getEdad();
+        int getDNI();
 
         /// CARGAR Y MOSTRAR
         void Cargar();

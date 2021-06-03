@@ -42,8 +42,128 @@ bool buscarMesa(int nroMesa){
     return false;
 }
 
+int contarRegistros(){
+    int  pos=0, cont=0;
+    Cliente reg;
+    while(reg.leerDeDisco(pos++)==true){
+        cont++;
+    }
+    return cont;
+}
+
+bool buscarDNI(int DNI){
+    int  pos=0;
+    Cliente reg;
+    while(reg.leerDeDisco(pos)==true){
+        if(reg.getDNI()==DNI){
+            return true;
+        }
+        pos++;
+    }
+    return false;
+}
+
+bool cargarDatos(){
+    Cliente reg;
+    int cant=0, ID=0;
+    cant=contarRegistros();
+    if(cant==0){
+        ID=1;
+        reg.setID(ID);
+    }
+    else if(cant!=0){
+        ID=cant+1;
+        reg.setID(ID);
+    }
+    cout << "ID: " << reg.getID() << endl;
+
+    char apellido[50];
+    cout << "APELLIDO: ";
+    fflush(stdin);
+    cin.getline(apellido, 50);
+    reg.setApellido(apellido);
+
+    char nombre[50];
+    cout << "NOMBRE: ";
+    fflush(stdin);
+    cin.getline(nombre, 50);
+    reg.setNombre(nombre);
+
+    int edad;
+    cout << "EDAD: ";
+    cin >> edad;
+    reg.setEdad(edad);
+
+    bool encontro;
+    int DNI;
+    cout << "DNI: ";
+    cin >> DNI;
+    encontro=buscarDNI(DNI);
+    if(encontro==true){
+        cout << "ERROR, DNI EXISTENTE" << endl;
+        return false;
+    }
+    else if(encontro==false){
+        reg.setDNI(DNI);
+    }
+
+    Fecha f;
+    int dia, mes, anio;
+    cout << "DIA: ";
+    cin >> dia;
+    while(!(dia>0 && dia<31)){
+        cout << "DIA: ";
+        cin >> dia;
+    }
+    f.setDia(dia);
+
+    cout << "MES: ";
+    cin >> mes;
+    while(!(mes>0 && mes<13)){
+        cout << "MES: ";
+        cin >> mes;
+    }
+    f.setMes(mes);
+
+    cout << "AÑO: ";
+    cin >> anio;
+    while(!(anio>2000) && !(anio<=reg.getFecha().getAnio())){
+        cout << "AÑO: ";
+        cin >> anio;
+    }
+    f.setAnio(anio);
+
+    int nroMesa;
+    cout << "Nro DE MESA: ";
+    cin >> nroMesa;
+    reg.setNroMesa(nroMesa);
+
+    bool estado=true;
+    reg.setEstado(estado);
+    cout << endl;
+
+    if(reg.escribirEnDisco()==true){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 void registrarCliente(){
-    bool disponible;
+    bool datosCargados;
+    datosCargados=cargarDatos();
+    if(datosCargados==true){
+        cout << "CLIENTE REGISTRADO CORRECTAMENTE" << endl;
+        cin.get();
+        return;
+    }
+    else{
+        cout << "ERROR, NO SE PUDO REGISTRAR EL CLIENTE" << endl;
+        cin.get();
+        return;
+    }
+    /*bool disponible;
     Cliente reg;
     reg.Cargar();
     bool encontro=buscarID(reg.getID());
@@ -72,7 +192,7 @@ void registrarCliente(){
         cout << "ERROR, ID REPETIDO, VOLVER A INTENTAR" << endl;;
         cin.get();
     }
-    return;
+    return;*/
 }
 
 

@@ -36,23 +36,34 @@
 		</Compiler>
 		<Unit filename="include/Carta.h" />
 		<Unit filename="include/Cliente.h" />
+		<Unit filename="include/Delivery.h" />
+		<Unit filename="include/DetalleVenta.h" />
 		<Unit filename="include/Fecha.h" />
+		<Unit filename="include/FuncionesCarta.h" />
 		<Unit filename="include/FuncionesClientes.h" />
+		<Unit filename="include/FuncionesMesas.h" />
 		<Unit filename="include/MenuDeClientes.h" />
+		<Unit filename="include/MenuDeMesas.h" />
 		<Unit filename="include/MenuPrincipal.h" />
 		<Unit filename="include/Mercaderias.h" />
 		<Unit filename="include/Mesas.h" />
 		<Unit filename="include/Persona.h" />
+		<Unit filename="include/Ventas.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Carta.cpp" />
 		<Unit filename="src/Cliente.cpp" />
+		<Unit filename="src/Delivery.cpp" />
+		<Unit filename="src/DetalleVenta.cpp" />
 		<Unit filename="src/Fecha.cpp" />
 		<Unit filename="src/FuncionesClientes.cpp" />
+		<Unit filename="src/FuncionesMesas.cpp" />
 		<Unit filename="src/MenuDeClientes.cpp" />
+		<Unit filename="src/MenuDeMesas.cpp" />
 		<Unit filename="src/MenuPrincipal.cpp" />
 		<Unit filename="src/Mercaderias.cpp" />
 		<Unit filename="src/Mesas.cpp" />
 		<Unit filename="src/Persona.cpp" />
+		<Unit filename="src/Ventas.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

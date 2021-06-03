@@ -26,11 +26,16 @@ void Persona::setEdad(int edad){
     _edad=edad;
 }
 
+void Persona::setDNI(int DNI){
+    _DNI=DNI;
+}
+
 
 /// GETS
 char *Persona::getNombre(){return _nombre;}
 char *Persona::getApellido(){return _apellido;}
 int Persona::getEdad(){return _edad;}
+int Persona::getDNI(){return _DNI;}
 
 
 /// CARGAR Y MOSTRAR
@@ -43,10 +48,13 @@ void Persona::Cargar(){
     cin.getline(_nombre, 50);
     cout << "EDAD: ";
     cin >> _edad;
+    cout << "DNI: ";
+    cin >> _DNI;
 }
 
 void Persona::Mostrar(){
     cout << "APELLIDO: " << _apellido << endl;
     cout << "NOMBRE: " << _nombre << endl;
     cout << "EDAD: " << _edad << endl;
+    cout << "DNI: " << _DNI << endl;
 }
