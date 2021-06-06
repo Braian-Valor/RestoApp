@@ -43,18 +43,18 @@ void Persona::Cargar(){
     cout << "APELLIDO: ";
     fflush(stdin);
     cin.getline(_apellido, 50);
-    cout << "NOMBRE: ";
+    cout << "NOMBRE:   ";
     fflush(stdin);
     cin.getline(_nombre, 50);
-    cout << "EDAD: ";
+    cout << "EDAD:     ";
     cin >> _edad;
-    cout << "DNI: ";
+    cout << "DNI:      ";
     cin >> _DNI;
 }
 
 void Persona::Mostrar(){
     cout << "APELLIDO: " << _apellido << endl;
-    cout << "NOMBRE: " << _nombre << endl;
-    cout << "EDAD: " << _edad << endl;
-    cout << "DNI: " << _DNI << endl;
+    cout << "NOMBRE:   " << _nombre << endl;
+    cout << "EDAD:     " << _edad << endl;
+    cout << "DNI:      " << _DNI << endl;
 }

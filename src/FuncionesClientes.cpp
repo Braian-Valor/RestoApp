@@ -7,40 +7,6 @@ using namespace std;
 #include "FuncionesClientes.h"
 #include "Fecha.h"
 #include "Cliente.h"
-#include "Mesas.h"
-
-
-bool buscarID(int ID){
-    Cliente reg;
-    int pos=0;
-    while(reg.leerDeDisco(pos)==true){
-        if(reg.getID()==ID){
-            return true;
-        }
-        pos++;
-    }
-    return false;
-}
-
-bool buscarMesa(int nroMesa){
-    Mesas reg;
-    FILE *p;
-    p=fopen("datos/mesas.dat", "rb+");
-    if(p==NULL){
-        return false;
-    }
-    while(fread(&reg, sizeof(Mesas), 1, p)==1){
-        if(reg.getNroMesa()==nroMesa && reg.getEstado()==true){
-            fseek(p, ftell(p)-sizeof(Mesas), 0);
-            reg.setEstado(false);
-            fwrite(&reg, sizeof(Mesas), 1, p);
-            fclose(p);
-            return true;
-        }
-    }
-    fclose(p);
-    return false;
-}
 
 int contarRegistros(){
     int  pos=0, cont=0;
@@ -133,11 +99,6 @@ bool cargarDatos(){
     }
     f.setAnio(anio);
 
-    int nroMesa;
-    cout << "Nro DE MESA: ";
-    cin >> nroMesa;
-    reg.setNroMesa(nroMesa);
-
     bool estado=true;
     reg.setEstado(estado);
     cout << endl;
@@ -163,36 +124,6 @@ void registrarCliente(){
         cin.get();
         return;
     }
-    /*bool disponible;
-    Cliente reg;
-    reg.Cargar();
-    bool encontro=buscarID(reg.getID());
-    if(encontro==false){
-        disponible=buscarMesa(reg.getNroMesa());
-        if(disponible==true){
-            bool escribio=reg.escribirEnDisco();
-            if(escribio==true){
-                cout << "CLIENTE REGISTRADO CORRECTAMENTE" << endl;
-                cin.get();
-                return;
-            }
-            else{
-                cout << "ERROR, NO SE PUDO REGISTRAR EL CLIENTE" << endl;
-                cin.get();
-                return;
-            }
-        }
-        else{
-            cout << "ERROR, LA MESA NO ESTA DISPONIBLE" << endl;
-            cin.get();
-            return;
-        }
-    }
-    else{
-        cout << "ERROR, ID REPETIDO, VOLVER A INTENTAR" << endl;;
-        cin.get();
-    }
-    return;*/
 }
 
 

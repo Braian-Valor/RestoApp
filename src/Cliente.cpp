@@ -14,10 +14,6 @@ void Cliente::setFecha(Fecha fechaIngreso){
     _fechaIngreso=fechaIngreso;
 }
 
-void Cliente::setNroMesa(int nroMesa){
-    _nroMesa=nroMesa;
-}
-
 void Cliente::setEstado(bool estado){
     _estado=estado;
 }
@@ -26,7 +22,6 @@ void Cliente::setEstado(bool estado){
 /// GETS
 int Cliente::getID(){return _ID;}
 Fecha Cliente::getFecha(){return _fechaIngreso;}
-int Cliente::getNroMesa(){return _nroMesa;}
 bool Cliente::getEstado(){return _estado;}
 
 
@@ -37,8 +32,6 @@ void Cliente::Cargar(){
     Persona::Cargar();
     cout << "FECHA DE INGRESO" << endl;
     _fechaIngreso.Cargar();
-    cout << "Nro DE MESA: ";
-    cin >> _nroMesa;
     _estado=true;
     cout << endl;
 }
@@ -48,8 +41,6 @@ void Cliente::Mostrar(){
         cout << "ID: " << _ID << endl;
         Persona::Mostrar();
         _fechaIngreso.Mostrar();
-        cout << endl;
-        cout << "Nro DE MESA: " << _nroMesa << endl;
         cout << endl;
     }
 }

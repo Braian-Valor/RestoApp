@@ -2,8 +2,9 @@
 #define FUNCIONESCLIENTES_H_INCLUDED
 
 /// PROTOTIPOS DE FUNCIONES PARA EL MENU CLIENTES
-bool buscarID(int ID);
-bool buscarMesa(int nroMesa);
+int contarRegistros();
+bool buscarDNI();
+bool cargarDatos();
 void registrarCliente();
 
 void modificarCliente();

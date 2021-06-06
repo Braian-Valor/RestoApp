@@ -5,13 +5,14 @@
 #include <locale.h>
 using namespace std;
 #include "MenuDeClientes.h"
+#include "MenuDeReservas.h"
 #include "MenuDeMesas.h"
 
 void dibujarMenuPrincipal() {
     cout << "     MENU PRINCIPAL     " << endl;
     cout << " -----------------------" << endl;
     cout << " 1 - CLIENTES           " << endl;
-    cout << " 2 - PEDIDOS            " << endl;
+    cout << " 2 - RESERVAS           " << endl;
     cout << " 3 - MESAS              " << endl;
     cout << " 4 - REPORTES           " << endl;
     cout << " 0 - SALIR DEL PROGRAMA " << endl;
@@ -45,6 +46,10 @@ void menuPrincipal() {
 
             case 1: {
                 menuClientes();
+            }break;
+
+            case 2: {
+                menuReservas();
             }break;
 
             case 3:{
