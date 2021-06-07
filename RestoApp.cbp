@@ -42,12 +42,15 @@
 		<Unit filename="include/FuncionesCarta.h" />
 		<Unit filename="include/FuncionesClientes.h" />
 		<Unit filename="include/FuncionesMesas.h" />
+		<Unit filename="include/FuncionesReserva.h" />
 		<Unit filename="include/MenuDeClientes.h" />
 		<Unit filename="include/MenuDeMesas.h" />
+		<Unit filename="include/MenuDeReservas.h" />
 		<Unit filename="include/MenuPrincipal.h" />
 		<Unit filename="include/Mercaderias.h" />
 		<Unit filename="include/Mesas.h" />
 		<Unit filename="include/Persona.h" />
+		<Unit filename="include/Reserva.h" />
 		<Unit filename="include/Ventas.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Carta.cpp" />
@@ -57,12 +60,15 @@
 		<Unit filename="src/Fecha.cpp" />
 		<Unit filename="src/FuncionesClientes.cpp" />
 		<Unit filename="src/FuncionesMesas.cpp" />
+		<Unit filename="src/FuncionesReserva.cpp" />
 		<Unit filename="src/MenuDeClientes.cpp" />
 		<Unit filename="src/MenuDeMesas.cpp" />
+		<Unit filename="src/MenuDeReservas.cpp" />
 		<Unit filename="src/MenuPrincipal.cpp" />
 		<Unit filename="src/Mercaderias.cpp" />
 		<Unit filename="src/Mesas.cpp" />
 		<Unit filename="src/Persona.cpp" />
+		<Unit filename="src/Reserva.cpp" />
 		<Unit filename="src/Ventas.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

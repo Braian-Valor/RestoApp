@@ -77,7 +77,7 @@ bool cargarDatos(){
     int dia, mes, anio;
     cout << "DIA: ";
     cin >> dia;
-    while(!(dia>0 && dia<31)){
+    while(!(dia>0 && dia<32)){
         cout << "DIA: ";
         cin >> dia;
     }
