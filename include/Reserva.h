@@ -5,6 +5,7 @@
 
 class Reserva{
     private:
+        int _nro;
         int _nroMesa;
         int _IDcliente;
         Fecha _fecha;
@@ -13,6 +14,7 @@ class Reserva{
 
     public:
         /// SETS
+        void setNro(int nro);
         void setNroMesa(int nroMesa);
         void setIDcliente(int IDcliente);
         void setFecha(Fecha fecha);
@@ -21,6 +23,7 @@ class Reserva{
         void setEstado(bool estado);
 
         /// GETS
+        int getNro();
         int getNroMesa();
         int getIDcliente();
         Fecha getFecha();

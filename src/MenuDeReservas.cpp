@@ -10,10 +10,9 @@ void dibujarMenuDeReservas(){
     cout << "     MENU RESERVAS            " << endl;
     cout << " ---------------------------- " << endl;
     cout << " 1 - REGISTRAR RESERVA        " << endl;
-    cout << " 2 -                       " << endl;
-    cout << " 3 -                      " << endl;
-    cout << " 4 -                     " << endl;
-    cout << " 5 - LISTAR RESERVAS          " << endl;
+    cout << " 2 - BAJA RESERVA             " << endl;
+    cout << " 3 - MODIFICAR / ACTUALIZAR   " << endl;
+    cout << " 4 - LISTAR RESERVAS          " << endl;
     cout << " 0 - VOLVER AL MENU PRINCIPAL " << endl;
     cout << " ---------------------------- " << endl;
     cout << endl;
@@ -47,9 +46,15 @@ void menuReservas(){
                 registrarReserva();
             }break;
 
+            case 2:{
+                bajaReserva();
+            }break;
 
+            case 3:{
+                modificarReserva();
+            }break;
 
-            case 5:{
+            case 4:{
                 listarReservas();
             }break;
 

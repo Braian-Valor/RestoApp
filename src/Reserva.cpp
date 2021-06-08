@@ -7,6 +7,10 @@ using namespace std;
 //#include "Fecha.h"
 
 /// SETS
+void Reserva::setNro(int nro){
+    _nro=nro;
+}
+
 void Reserva::setNroMesa(int nroMesa){
     _nroMesa=nroMesa;
 }
@@ -33,6 +37,7 @@ void Reserva::setEstado(bool estado){
 
 
 /// GETS
+int Reserva::getNro(){return _nro;}
 int Reserva::getNroMesa(){return _nroMesa;}
 int Reserva::getIDcliente(){return _IDcliente;}
 Fecha Reserva::getFecha(){return _fecha;}
@@ -83,10 +88,9 @@ void Reserva::cargar(){
 }
 
 void Reserva::mostrar(){
-    cout << "NRO MESA: " << _nroMesa << endl;
-    cout << "ID CLIENTE: " << _IDcliente << endl;;
-    _fecha.Mostrar();
-    cout << endl;
-    cout << "HORA: " << _hora << endl;
-    cout << "MINUTOS: " << _minutos << endl;
+    if(_estado==true){
+        cout << " " << _nro << "       " << _nroMesa << "         " << _IDcliente << "          ";
+        _fecha.Mostrar();
+        cout << "   " <<  _hora << ":" << _minutos << endl;
+    }
 }

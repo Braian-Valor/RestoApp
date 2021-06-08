@@ -307,17 +307,17 @@
 1622674819 source:c:\users\braian\desktop\restoapp\src\funcionesmesas.cpp
 	"FuncionesMesas.h"
 
-1623007902 source:c:\users\braian\desktop\restoapp\src\reserva.cpp
+1623171144 source:c:\users\braian\desktop\restoapp\src\reserva.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Reserva.h"
 
-1623007489 c:\users\braian\desktop\restoapp\include\reserva.h
+1623170854 c:\users\braian\desktop\restoapp\include\reserva.h
 	"Fecha.h"
 
-1623009358 source:c:\users\braian\desktop\restoapp\src\menudereservas.cpp
+1623173173 source:c:\users\braian\desktop\restoapp\src\menudereservas.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -327,7 +327,7 @@
 
 1623008525 c:\users\braian\desktop\restoapp\include\menudereservas.h
 
-1623092713 source:c:\users\braian\desktop\restoapp\src\funcionesreserva.cpp
+1623173478 source:c:\users\braian\desktop\restoapp\src\funcionesreserva.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -338,5 +338,5 @@
 	"Mesas.h"
 	"Cliente.h"
 
-1623092713 c:\users\braian\desktop\restoapp\include\funcionesreserva.h
+1623173173 c:\users\braian\desktop\restoapp\include\funcionesreserva.h
 
