@@ -6,62 +6,33 @@ using namespace std;
 #include "Mercaderias.h"
 
 /// SETS
-void Mercaderias::setCodigo(char *codigo){
-    strcpy(_codigo, codigo);
+void Mercaderias::setTipoAlimento(char *tipoAlimento){
+    strcpy(_tipoAlimento, tipoAlimento);
 }
 
 void Mercaderias::setNombre(char *nombre){
     strcpy(_nombre, nombre);
 }
 
-void Mercaderias::setCant(int cant){
-    _cant=cant;
-}
-
-void Mercaderias::setGastoEntrada(float gastoEntrada){
-    _gastoEntrada=gastoEntrada;
-}
-
-void Mercaderias::setFecha(Fecha fechaVencimiento){
-    _fechaVencimiento=fechaVencimiento;
-}
-
-void Mercaderias::setEstado(bool estado){
-    _estado=estado;
-}
-
 
 /// GETS
-char *Mercaderias::getcodigo(){return _codigo;}
+char *Mercaderias::getTipoAlimento(){return _tipoAlimento;}
 char *Mercaderias::getNombre(){return _nombre;}
-int Mercaderias::getCant(){return _cant;}
-float Mercaderias::getGastoEntrada(){return _gastoEntrada;}
-Fecha Mercaderias::getFecha(){return _fechaVencimiento;}
-bool Mercaderias::getEstado(){return _estado;}
 
 
 /// CARGAR Y MOSTRAR
 void Mercaderias::Cargar(){
-    cout << "CODIGO:              ";
-    cin >> _codigo;
+    cout << "TIPO ALIMENTO:       ";
+    cin >> _tipoAlimento;
     cout << "NOMBRE:              ";
     cin >> _nombre;
-    cout << "CANTIDAD:            ";
-    cin >> _cant;
-    cout << "GASTO DE ENTRADA:    ";
-    cin >> _gastoEntrada;
-    cout << "FECHA DE VENCIMIENTO " << endl;
-    _fechaVencimiento.Cargar();
+    IngresoMercaderias::Cargar();
 }
 
 void Mercaderias::Mostrar(){
-    cout << "CODIGO:              " << _codigo << endl;
+    cout << "TIPO ALIMENTO:       " << _tipoAlimento << endl;
     cout << "NOMBRE:              " << _nombre << endl;
-    cout << "CANTIDAD:            " << _cant << endl;
-    cout << "GASTO DE ENTRADA:    " << _gastoEntrada << endl;
-    cout << "FECHA DE VENCIMIENTO ";
-    _fechaVencimiento.Mostrar();
-    cout << endl;
+    IngresoMercaderias::Mostrar();
 }
 
 

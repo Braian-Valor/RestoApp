@@ -7,6 +7,7 @@ using namespace std;
 #include "MenuDeClientes.h"
 #include "MenuDeReservas.h"
 #include "MenuDeMesas.h"
+#include "MenuDeMercaderias.h"
 
 void dibujarMenuPrincipal() {
     cout << "     MENU PRINCIPAL     " << endl;
@@ -14,7 +15,7 @@ void dibujarMenuPrincipal() {
     cout << " 1 - CLIENTES           " << endl;
     cout << " 2 - RESERVAS           " << endl;
     cout << " 3 - MESAS              " << endl;
-    cout << " 4 - REPORTES           " << endl;
+    cout << " 4 - MERCADERIAS        " << endl;
     cout << " 0 - SALIR DEL PROGRAMA " << endl;
     cout << " -----------------------" << endl;
     cout << endl;
@@ -54,6 +55,10 @@ void menuPrincipal() {
 
             case 3:{
                 MenuMesas();
+            }break;
+
+            case 4:{
+                menuMercaderias();
             }break;
         }
         cin.get();

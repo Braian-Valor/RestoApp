@@ -1,0 +1,9 @@
+#ifndef MENUDEMERCADERIAS_H_INCLUDED
+#define MENUDEMERCADERIAS_H_INCLUDED
+
+/// PROTOTIPOS DEL MENU DE MERCADERIAS
+void dibujarMenuDeMercaderias();
+void menuMercaderias();
+
+
+#endif // MENUDEMERCADERIAS_H_INCLUDED
