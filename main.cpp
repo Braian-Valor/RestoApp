@@ -4,7 +4,6 @@
 #include <cstring>
 using namespace std;
 #include "MenuPrincipal.h"
-#include "Mercaderias.h"
 
 int main() {
     menuPrincipal();

@@ -47,12 +47,22 @@ bool cargarDatos(){
     cout << "APELLIDO: ";
     fflush(stdin);
     cin.getline(apellido, 50);
+    while(apellido[0]==00 || apellido[0]==32){
+        cout << "APELLIDO: ";
+        fflush(stdin);
+        cin.getline(apellido, 50);
+    }
     reg.setApellido(apellido);
 
     char nombre[50];
     cout << "NOMBRE: ";
     fflush(stdin);
     cin.getline(nombre, 50);
+    while(nombre[0]==00 || nombre[0]==32){
+        cout << "NOMBRE: ";
+        fflush(stdin);
+        cin.getline(nombre, 50);
+    }
     reg.setNombre(nombre);
 
     int edad;
@@ -93,11 +103,13 @@ bool cargarDatos(){
 
     cout << "AÑO: ";
     cin >> anio;
-    while(!(anio>2000) && !(anio<=reg.getFecha().getAnio())){
+    while(!(anio>2000 && anio<=reg.getFecha().getAnio())){
         cout << "AÑO: ";
         cin >> anio;
     }
     f.setAnio(anio);
+
+    reg.setFecha(f);
 
     bool estado=true;
     reg.setEstado(estado);
@@ -111,28 +123,17 @@ bool cargarDatos(){
     }
 }
 
-void registrarCliente(){
-    bool datosCargados;
-    datosCargados=cargarDatos();
-    if(datosCargados==true){
-        cout << "CLIENTE REGISTRADO CORRECTAMENTE" << endl;
-        cin.get();
-        return;
+bool registrarCliente(){
+    if(cargarDatos()==true){
+        return true;
     }
     else{
-        cout << "ERROR, NO SE PUDO REGISTRAR EL CLIENTE" << endl;
-        cin.get();
-        return;
+        return false;
     }
 }
 
 
-void modificarCliente(){
-    int ID;
-    cout << "INGRESAR ID DEL CLIENTE A MODIFICAR: ";
-    cin >> ID;
-    system("cls");
-
+void modificarCliente(int ID){
     int opcion;
     bool salir=false;
     Cliente reg;
@@ -211,12 +212,26 @@ void modificarCliente(){
                         cout << "INGRESAR FECHA" << endl;
                         cout << "DIA: ";
                         cin >> dia;
+                        while(!(dia>0 && dia<32)){
+                            cout << "DIA: ";
+                            cin >> dia;
+                        }
                         fecha.setDia(dia);
+
                         cout << "MES: ";
                         cin >> mes;
+                        while(!(mes>0 && mes<13)){
+                            cout << "MES: ";
+                            cin >> mes;
+                        }
                         fecha.setMes(mes);
+
                         cout << "AÑO: ";
                         cin >> anio;
+                        while(!(anio>2000 && anio<=reg.getFecha().getAnio())){
+                            cout << "AÑO: ";
+                            cin >> anio;
+                        }
                         fecha.setAnio(anio);
 
                         fseek(p, ftell(p)-sizeof(Cliente), 0);
@@ -232,7 +247,7 @@ void modificarCliente(){
 }
 
 
-void eliminarCliente(){
+void eliminarCliente(int ID){
     Cliente reg;
     FILE *p;
     p=fopen("datos/clientes.dat", "rb+");
@@ -241,10 +256,6 @@ void eliminarCliente(){
         cin.get();
         return;
     }
-
-    int ID;
-    cout << "INGRESAR ID DE CLIENTE A ELIMINAR: ";
-    cin >> ID;
 
     while(fread(&reg, sizeof(Cliente), 1, p)==1){
         if(reg.getID()==ID){
@@ -264,11 +275,7 @@ void eliminarCliente(){
 }
 
 
-void consultaCliente(){
-    int ID;
-    cout << "INGRESAR ID DE CONSULTA: ";
-    cin >> ID;
-
+void consultaCliente(int ID){
     Cliente reg;
     int pos=0;
     while(reg.leerDeDisco(pos)==true){
@@ -285,9 +292,8 @@ void consultaCliente(){
 void listarClientes(){
     Cliente reg;
     int pos=0;
-    while(reg.leerDeDisco(pos)==true){
+    while(reg.leerDeDisco(pos++)==true){
         reg.Mostrar();
-        pos++;
         cout << endl;
     }
 }

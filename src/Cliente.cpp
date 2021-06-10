@@ -25,17 +25,7 @@ Fecha Cliente::getFecha(){return _fechaIngreso;}
 bool Cliente::getEstado(){return _estado;}
 
 
-/// CARGAR Y MOSTRAR
-void Cliente::Cargar(){
-    cout << "ID: ";
-    cin >> _ID;
-    Persona::Cargar();
-    cout << "FECHA DE INGRESO" << endl;
-    _fechaIngreso.Cargar();
-    _estado=true;
-    cout << endl;
-}
-
+/// MOSTRAR
 void Cliente::Mostrar(){
     if(_estado==true){
         cout << "ID: " << _ID << endl;

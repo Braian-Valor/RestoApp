@@ -9,7 +9,7 @@ bool buscarCliente(int IDcliente);
 void mesaReservada(int nroMesa);
 bool buscarMesa(int nroMesa);
 bool cargarDatosReserva();
-void registrarReserva();
+bool registrarReserva();
 
 void bajaReserva();
 

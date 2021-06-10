@@ -43,7 +43,14 @@ void menuReservas(){
             }break;
 
             case 1:{
-                registrarReserva();
+                if(registrarReserva()==true){
+                    cout << "RESERVA REGISTRADA CON EXITO";
+                    cin.get();
+                }
+                else{
+                    cout << "ERROR, NO SE PUDO REGISTRAR LA RESERVA";
+                    cin.get();
+                }
             }break;
 
             case 2:{

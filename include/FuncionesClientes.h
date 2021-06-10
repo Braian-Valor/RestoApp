@@ -5,13 +5,13 @@
 int contarRegistros();
 bool buscarDNI();
 bool cargarDatos();
-void registrarCliente();
+bool registrarCliente();
 
-void modificarCliente();
+void modificarCliente(int ID);
 
-void eliminarCliente();
+void eliminarCliente(int ID);
 
-void consultaCliente();
+void consultaCliente(int ID);
 
 void listarClientes();
 

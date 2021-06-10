@@ -5,13 +5,14 @@
 #include <locale.h>
 using namespace std;
 #include "MenuDeMercaderias.h"
+#include "FuncionesMercaderias.h"
 
 void dibujarMenuDeMercaderias(){
     cout << "     MENU MERCADERIAS     " << endl;
     cout << " ------------------------ " << endl;
     cout << " 1 - REGISTRAR MERCADERIA " << endl;
     cout << " 2 - MODIFICAR/ACTUALIZAR " << endl;
-    cout << " 3 -               " << endl;
+    cout << " 3 - BAJA DE MERCADERIA   " << endl;
     cout << " 4 - LISTAR MERCADERIA    " << endl;
     cout << " 0 - SALIR DEL PROGRAMA   " << endl;
     cout << " ------------------------ " << endl;
@@ -40,6 +41,10 @@ void menuMercaderias(){
             case 0: {
                 salir=true;
                 cout << "VOLVIENDO AL MENU PRINCIPAL..";
+            }break;
+
+            case 1:{
+                registrarMercaderia();
             }break;
         }
         cin.get();

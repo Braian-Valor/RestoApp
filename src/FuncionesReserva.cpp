@@ -98,24 +98,20 @@ bool cargarDatosReserva(){
     }
     cout << "NRO: " << reg.getNro() << endl;
 
-    bool encontroMesa;
     int nroMesa;
     cout << "NRO MESA: ";
     cin >> nroMesa;
-    encontroMesa=buscarMesa(nroMesa);
-    if(encontroMesa==true){
+    if(buscarMesa(nroMesa)==true){
         reg.setNroMesa(nroMesa);
     }
     else{
         return false;
     }
 
-    bool encontroCliente;
     int IDcliente;
     cout << "ID CLIENTE: ";
     cin >> IDcliente;
-    encontroCliente=buscarCliente(IDcliente);
-    if(encontroCliente==true){
+    if(buscarCliente(IDcliente)==true){
         reg.setIDcliente(IDcliente);
     }
     else{
@@ -159,7 +155,7 @@ bool cargarDatosReserva(){
 
     cout << "MINUTOS: ";
     cin >> minutos;
-    while(!(minutos>0 && minutos<61)){
+    while(!(minutos>=0 && minutos<61)){
         cout << "MINUTOS: ";
         cin >> minutos;
     }
@@ -176,7 +172,7 @@ bool cargarDatosReserva(){
     bool estado=true;
     reg.setEstado(estado);
 
-    mesaReservada(nroMesa);
+    //mesaReservada(nroMesa);
 
     if(reg.escribirEnDisco()==true){
         return true;
@@ -186,18 +182,12 @@ bool cargarDatosReserva(){
     }
 }
 
-void registrarReserva(){
-    bool registro;
-    registro=cargarDatosReserva();
-    if(registro==true){
-        cout << "RESERVA REGISTRADA CON EXITO";
-        cin.get();
-        return;
+bool registrarReserva(){
+    if(cargarDatosReserva()==true){
+        return true;
     }
     else{
-        cout << "ERROR, NO SE PUDO REGISTRAR LA RESERVA";
-        cin.get();
-        return;
+        return false;
     }
 }
 

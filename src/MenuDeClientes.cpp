@@ -45,19 +45,36 @@ void menuClientes(){
             }break;
 
             case 1:{
-                registrarCliente();
+                if(registrarCliente()==true){
+                    cout << "CLIENTE REGISTRADO CORRECTAMENTE" << endl;
+                    cin.get();
+                }
+                else{
+                    cout << "ERROR, NO SE PUDO REGISTRAR EL CLIENTE" << endl;
+                    cin.get();
+                }
             }break;
 
             case 2:{
-                modificarCliente();
+                int ID;
+                cout << "INGRESAR ID DEL CLIENTE A MODIFICAR: ";
+                cin >> ID;
+                system("cls");
+                modificarCliente(ID);
             }break;
 
             case 3:{
-                eliminarCliente();
+                int ID;
+                cout << "INGRESAR ID DE CLIENTE A ELIMINAR: ";
+                cin >> ID;
+                eliminarCliente(ID);
             }break;
 
             case 4:{
-                consultaCliente();
+                int ID;
+                cout << "INGRESAR ID DE CONSULTA: ";
+                cin >> ID;
+                consultaCliente(ID);
             }break;
 
             case 5:{

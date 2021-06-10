@@ -21,8 +21,7 @@ class Cliente:public Persona {
         Fecha getFecha();
         bool getEstado();
 
-        /// CARGAR Y MOSTRAR
-        void Cargar();
+        /// MOSTRAR
         void Mostrar();
 
         /// ARCHIVOS
