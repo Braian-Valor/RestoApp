@@ -13,9 +13,12 @@ using namespace std;
 int buscarNroMesa(int);
 void ListadoMesas();
 void Buscar_Mesa();
-void HacerReserva();
+/*void HacerReserva();*/
+void ModificacionMesa();
+void BajaMesa();
 void NuevaMesa();
 void leermesas(Mesas,int);
+/*bool BuscarOcupacionMesa(int);*/
 
 
 
@@ -38,3 +41,4 @@ void leermesas(Mesas,int);
 
 
 #endif // FUNCIONESMESAS_H_INCLUDED
+

@@ -6,51 +6,82 @@ using namespace std;
 #include "Mesas.h"
 
 /// SETS
-void Mesas::setNroMesa(int nroMesa){
-    _nroMesa=nroMesa;
+
+
+void Mesas::setNroMesa(int nroMesa)
+{
+    NroMesa=nroMesa;                                        ///Validaciones de valores Negativos
 }
 
-void Mesas::setCapacidad(int capacidad){
-    _capacidad=capacidad;
+void Mesas::setCapacidad(int capacidad)
+{
+    Capacidad=capacidad;
 }
 
-void Mesas::setEstado(bool estado){
-    _estado=estado;
+void Mesas::setEstado(bool estado)
+{
+    Estado=estado;
 }
-
+void Mesas::setFecha(Fecha f)
+{
+    Dia_Horario=f;
+}
 
 /// GETS
-int Mesas::getNroMesa(){return _nroMesa;}
-int Mesas::getCapacidad(){return _capacidad;}
-bool Mesas::getEstado(){return _estado;}
+
+int Mesas::getNroMesa()
+{
+    return NroMesa;
+}
+int Mesas::getCapacidad()
+{
+    return Capacidad;
+}
+bool Mesas::getEstado()
+{
+    return Estado;
+}
+Fecha Mesas::getFecha()
+{
+    return Dia_Horario;
+}
 
 
 /// CARGAR Y MOSTRAR
-void Mesas::Cargar(){
+void Mesas::Cargar()
+{
     cout << "Nro DE MESA: ";
-    cin >> _nroMesa;
+    cin >> NroMesa;
     cout << "CAPACIDAD: ";
-    cin >> _capacidad;
-    _estado=true;
+    cin >> Capacidad;
+    Estado=true;
 }
 
-void Mesas::Mostrar(){
+void Mesas::Mostrar()
+{
     //cout << "Nro DE MESA | CAPACIDAD | ESTADO " << endl;
-    if(_estado==true){
-        cout << "     " << _nroMesa << "            " << _capacidad << "       ";
-        if (_estado==true){
-            cout << "DISPONIBLE";
-        }
-        cout << endl;
+
+    cout << "     " << NroMesa << "            " << Capacidad << "       ";
+    if (Estado==true)
+    {
+        cout << "DISPONIBLE";
     }
+    else
+    {
+        cout<< "NO DISPONIBLE";
+    }
+    cout << endl;
+
 }
 
 /// ARCHIVOS
-bool Mesas::escribirEnDisco(){
+bool Mesas::escribirEnDisco()
+{
     bool escribio;
     FILE *p;
     p=fopen("datos/mesas.dat", "ab");
-    if(p==NULL){
+    if(p==NULL)
+    {
         return false;
     }
     escribio=fwrite(this, sizeof(Mesas), 1, p);
@@ -58,15 +89,33 @@ bool Mesas::escribirEnDisco(){
     return escribio;
 }
 
-bool Mesas::leerDeDisco(int pos){
+bool Mesas::leerDeDisco(int pos)
+{
     bool leyo;
     FILE *p;
     p=fopen("datos/mesas.dat", "rb");
-    if(p==NULL){
+    if(p==NULL)
+    {
         return false;
     }
     fseek(p, sizeof(Mesas)*pos,0);
     leyo=fread(this, sizeof(Mesas), 1, p);
     fclose(p);
     return leyo;
+}
+
+bool Mesas::ModificarValorMesa(int pos)
+{
+    FILE *p;
+    bool escribio;
+    p=fopen("datos/mesas.dat","rb+");
+    if(p==NULL)
+    {
+        cout<< "ERROR DE MEMORIA"<<endl;
+        return false;
+    }
+    fseek(p,sizeof(Mesas)*pos,0);
+    escribio=fwrite(this,sizeof(Mesas),1,p);
+    fclose(p);
+    return escribio;
 }
