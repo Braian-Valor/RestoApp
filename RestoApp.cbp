@@ -44,10 +44,10 @@
 		<Unit filename="include/FuncionesMercaderias.h" />
 		<Unit filename="include/FuncionesMesas.h" />
 		<Unit filename="include/FuncionesReserva.h" />
-		<Unit filename="include/IngresoMercaderias.h" />
 		<Unit filename="include/MenuDeClientes.h" />
 		<Unit filename="include/MenuDeMercaderias.h" />
 		<Unit filename="include/MenuDeMesas.h" />
+		<Unit filename="include/MenuDePedidos.h" />
 		<Unit filename="include/MenuDeReservas.h" />
 		<Unit filename="include/MenuPrincipal.h" />
 		<Unit filename="include/Mercaderias.h" />
@@ -65,10 +65,10 @@
 		<Unit filename="src/FuncionesMercaderias.cpp" />
 		<Unit filename="src/FuncionesMesas.cpp" />
 		<Unit filename="src/FuncionesReserva.cpp" />
-		<Unit filename="src/IngresoMercaderias.cpp" />
 		<Unit filename="src/MenuDeClientes.cpp" />
 		<Unit filename="src/MenuDeMercaderias.cpp" />
 		<Unit filename="src/MenuDeMesas.cpp" />
+		<Unit filename="src/MenuDePedidos.cpp" />
 		<Unit filename="src/MenuDeReservas.cpp" />
 		<Unit filename="src/MenuPrincipal.cpp" />
 		<Unit filename="src/Mercaderias.cpp" />

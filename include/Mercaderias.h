@@ -1,21 +1,26 @@
 #ifndef MERCADERIAS_H_INCLUDED
 #define MERCADERIAS_H_INCLUDED
 
-#include "IngresoMercaderias.h"
+#include "Fecha.h"
 
-class Mercaderias:public IngresoMercaderias{
-    protected:
-        char _tipoAlimento[50];
+class Mercaderias {
+    private:
         char _nombre[50];
-
+        Fecha _fechaVencimiento;
+        float _cantStock;
+        bool _estado;
     public:
         /// SETS
-        void setTipoAlimento(char *tipoAlimento);
         void setNombre(char *nombre);
+        void setFechaVencimiento(Fecha fechaVencimiento);
+        void setCantStock(float cantStock);
+        void setEstado(bool estado);
 
         /// GETS
-        char *getTipoAlimento();
         char *getNombre();
+        Fecha getFechaVencimiento();
+        float getCantStock();
+        bool getEstado();
 
         /// CARGAR Y MOSTRAR
         void Cargar();

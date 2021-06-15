@@ -44,7 +44,34 @@ void menuMercaderias(){
             }break;
 
             case 1:{
-                registrarMercaderia();
+                if(registrarMercaderia()==true){
+                    cout << "MERCADERIA REGISTRADA CON EXITO";
+                    cin.get();
+                }
+                else{
+                    cout << "ERROR, NO SE PUDO REALIZAR LA REGISTRACION";
+                    cin.get();
+                }
+            }break;
+
+            case 2:{
+                char nombre[50];
+                cout << "NOMBRE: ";
+                fflush(stdin);
+                cin.getline(nombre,50);
+                modificarMercaderia(nombre);
+            }break;
+
+            case 3:{
+                char nombre[50];
+                cout << "NOMBRE: ";
+                fflush(stdin);
+                cin.getline(nombre,50);
+                eliminarMercaderia(nombre);
+            }break;
+
+            case 4:{
+                listarMercaderias();
             }break;
         }
         cin.get();

@@ -6,33 +6,45 @@ using namespace std;
 #include "Mercaderias.h"
 
 /// SETS
-void Mercaderias::setTipoAlimento(char *tipoAlimento){
-    strcpy(_tipoAlimento, tipoAlimento);
-}
-
 void Mercaderias::setNombre(char *nombre){
     strcpy(_nombre, nombre);
 }
 
+void Mercaderias::setFechaVencimiento(Fecha fechaVencimiento){
+    _fechaVencimiento=fechaVencimiento;
+}
+
+void Mercaderias::setCantStock(float cantStock){
+    _cantStock=cantStock;
+}
+
+void Mercaderias::setEstado(bool estado){
+    _estado=estado;
+}
 
 /// GETS
-char *Mercaderias::getTipoAlimento(){return _tipoAlimento;}
 char *Mercaderias::getNombre(){return _nombre;}
-
+Fecha Mercaderias::getFechaVencimiento(){return _fechaVencimiento;}
+float Mercaderias::getCantStock(){return _cantStock;}
+bool Mercaderias::getEstado(){return _estado;}
 
 /// CARGAR Y MOSTRAR
 void Mercaderias::Cargar(){
-    cout << "TIPO ALIMENTO:       ";
-    cin >> _tipoAlimento;
     cout << "NOMBRE:              ";
     cin >> _nombre;
-    IngresoMercaderias::Cargar();
+    _fechaVencimiento.Cargar();
+    cout << "CANT STOCK: ";
+    cin >> _cantStock;
+    _estado=true;
 }
 
 void Mercaderias::Mostrar(){
-    cout << "TIPO ALIMENTO:       " << _tipoAlimento << endl;
-    cout << "NOMBRE:              " << _nombre << endl;
-    IngresoMercaderias::Mostrar();
+    if(_estado==true){
+        cout << "NOMBRE:     " << _nombre << endl;
+        _fechaVencimiento.Mostrar();
+        cout << endl;
+        cout << "CANT STOCK: " << _cantStock << endl;
+    }
 }
 
 
