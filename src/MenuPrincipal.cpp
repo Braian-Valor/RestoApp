@@ -4,11 +4,13 @@
 #include <cstring>
 #include <locale.h>
 using namespace std;
+#include "ConsoleManager.h"
 #include "MenuDeClientes.h"
 #include "MenuDeReservas.h"
 #include "MenuDeMesas.h"
 #include "MenuDeMercaderias.h"
-#include "MenuDePedidos.h"
+#include "MenuDeCarta.h"
+#include "MenuDeVentas.h"
 
 void dibujarMenuPrincipal() {
     cout << "     MENU PRINCIPAL     " << endl;
@@ -17,7 +19,8 @@ void dibujarMenuPrincipal() {
     cout << " 2 - RESERVAS           " << endl;
     cout << " 3 - MESAS              " << endl;
     cout << " 4 - MERCADERIAS        " << endl;
-    cout << " 5 - PEDIDOS            " << endl;
+    cout << " 5 - CARTA              " << endl;
+    cout << " 6 - VENTAS             " << endl;
     cout << " 0 - SALIR DEL PROGRAMA " << endl;
     cout << " -----------------------" << endl;
     cout << endl;
@@ -25,6 +28,9 @@ void dibujarMenuPrincipal() {
 
 void menuPrincipal() {
     setlocale(LC_CTYPE, "Spanish");
+
+    titulo("RestoApp");
+    cursor(false);
 
     bool salir=false;
     int opcion;
@@ -64,7 +70,11 @@ void menuPrincipal() {
             }break;
 
             case 5:{
-                menuPedidos();
+                menuDeCarta();
+            }break;
+
+            case 6:{
+                menuDeVentas();
             }break;
         }
         cin.get();

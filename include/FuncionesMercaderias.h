@@ -2,6 +2,7 @@
 #define FUNCIONESMERCADERIAS_H_INCLUDED
 
 /// PROTOTIPOS DE FUNCIONES PARA EL MENU DE MERCADERIAS
+int contarRegistrosDeMercaderias();
 bool cargarDatosMercaderia();
 bool registrarMercaderia();
 

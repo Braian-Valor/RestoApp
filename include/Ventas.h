@@ -2,45 +2,40 @@
 #define VENTAS_H_INCLUDED
 
 #include "Fecha.h"
-#include "DetalleVenta.h"
 
-class Ventas
-{
-private:
-    int _idVenta;
-    Fecha _fecha;
-    int _metodoPago;
-    int _idCliente;
-    int _contDescuentos;
-    float _montoTotal;
-    bool _envio;
+class Ventas{
+    private:
+        int _IDcliente;
+        int _IDplato;
+        Fecha _fecha;
+        int _cantidad;
+        int _metodoDePago;
+        float _descuento;
+        float _montoTotal;
 
     public:
         /// SETS
-        void setIdVenta(int ID);
-        void setFecha(Fecha fecha);
-        void setMetodoPago(int met);
-        void setIdCliente(int id);
-        void setContDescuentos(int cont);
-        void setMonto(float monto);
-        void setEnvio(bool envio);
+        void setIDcliente(int IDcliente);
+        void setIDplato(int IDplato);
+        void setFechaVenta(Fecha fecha);
+        void setCantidad(int cantidad);
+        void setMetodoPago(int metodoDePago);
+        void setDescuento(float descuento);
+        void setMontoTotal(float montoTotal);
 
         /// GETS
-        int getIdVenta();
-        Fecha getFecha();
+        int getIDcliente();
+        int getIDplato();
+        Fecha getFechaVenta();
+        int getCantidad();
         int getMetodoPago();
-        int getIdCliente();
-        int getContDescuentos();
-        float getTotalVenta();
-        bool getEnvio();
+        float getDescuento();
+        float getMontoTotal();
 
-        /// CARGAR/MOSTRAR
-        void Cargar();
+        /// MOSTRAR
         void Mostrar();
 
-
         /// ARCHIVOS
-        void consultaVenta();
         bool escribirEnDisco();
         bool leerDeDisco(int pos);
 };

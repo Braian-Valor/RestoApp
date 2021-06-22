@@ -7,8 +7,28 @@ using namespace std;
 #include "FuncionesMercaderias.h"
 #include "Mercaderias.h"
 
+int contarRegistrosDeMercaderias(){
+    int  pos=0, cont=0;
+    Mercaderias reg;
+    while(reg.leerDeDisco(pos++)==true){
+        cont++;
+    }
+    return cont;
+}
+
 bool cargarDatosMercaderia(){
     Mercaderias reg;
+    int cant=0, ID=0;
+    cant=contarRegistrosDeMercaderias();
+    if(cant==0){
+        ID=1;
+        reg.setID(ID);
+    }
+    else if(cant!=0){
+        ID=cant+1;
+        reg.setID(ID);
+    }
+    cout << "ID: " << reg.getID() << endl;
 
     char nombre[50];
     cout << "NOMBRE: ";

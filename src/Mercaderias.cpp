@@ -6,30 +6,35 @@ using namespace std;
 #include "Mercaderias.h"
 
 /// SETS
+void Mercaderias::setID(int ID){
+    _ID=ID;
+}
 void Mercaderias::setNombre(char *nombre){
     strcpy(_nombre, nombre);
 }
-
 void Mercaderias::setFechaVencimiento(Fecha fechaVencimiento){
     _fechaVencimiento=fechaVencimiento;
 }
-
 void Mercaderias::setCantStock(float cantStock){
     _cantStock=cantStock;
 }
-
 void Mercaderias::setEstado(bool estado){
     _estado=estado;
 }
 
+
 /// GETS
+int Mercaderias::getID(){return _ID;}
 char *Mercaderias::getNombre(){return _nombre;}
 Fecha Mercaderias::getFechaVencimiento(){return _fechaVencimiento;}
 float Mercaderias::getCantStock(){return _cantStock;}
 bool Mercaderias::getEstado(){return _estado;}
 
+
 /// CARGAR Y MOSTRAR
 void Mercaderias::Cargar(){
+    cout << "ID: ";
+    cin >> _ID;
     cout << "NOMBRE:              ";
     cin >> _nombre;
     _fechaVencimiento.Cargar();
@@ -37,9 +42,9 @@ void Mercaderias::Cargar(){
     cin >> _cantStock;
     _estado=true;
 }
-
 void Mercaderias::Mostrar(){
     if(_estado==true){
+        cout << "ID: " << _ID << endl;
         cout << "NOMBRE:     " << _nombre << endl;
         _fechaVencimiento.Mostrar();
         cout << endl;
@@ -60,7 +65,6 @@ bool Mercaderias::escribirEnDisco(){
     fclose(p);
     return escribio;
 }
-
 bool Mercaderias::leerDeDisco(int pos){
     bool leyo;
     FILE *p;

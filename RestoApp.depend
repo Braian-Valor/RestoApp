@@ -19,7 +19,7 @@
 	<cstring>
 	<cstdio>
 
-1623288691 source:c:\users\braian\desktop\restoapp\main.cpp
+1624143898 source:c:\users\braian\desktop\restoapp\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -66,26 +66,29 @@
 
 1622756964 c:\users\braian\desktop\restoapp\include\persona.h
 
-1623778083 c:\users\braian\desktop\restoapp\include\mercaderias.h
+1624143898 c:\users\braian\desktop\restoapp\include\mercaderias.h
 	"Fecha.h"
 
-1623780755 source:c:\users\braian\desktop\restoapp\src\mercaderias.cpp
+1624302210 source:c:\users\braian\desktop\restoapp\src\mercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Mercaderias.h"
 
-1623264442 source:c:\users\braian\desktop\restoapp\src\menuprincipal.cpp
+1624331746 source:c:\users\braian\desktop\restoapp\src\menuprincipal.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	<locale.h>
+	"ConsoleManager.h"
 	"MenuDeClientes.h"
 	"MenuDeReservas.h"
 	"MenuDeMesas.h"
 	"MenuDeMercaderias.h"
+	"MenuDeCarta.h"
+	"MenuDeVentas.h"
 
 1622674350 c:\users\braian\desktop\restoapp\include\menuprincipal.h
 
@@ -246,9 +249,9 @@
 	"Fecha.h"
 	"DetalleVenta.h"
 
-1622674350 c:\users\braian\desktop\restoapp\include\carta.h
+1624145302 c:\users\braian\desktop\restoapp\include\carta.h
 
-1622674350 source:c:\users\braian\desktop\restoapp\src\carta.cpp
+1624332142 source:c:\users\braian\desktop\restoapp\src\carta.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -272,19 +275,18 @@
 	"DetalleVenta.h"
 	"Carta.h"
 
-1622674350 c:\users\braian\desktop\restoapp\include\detalleventa.h
+1624143658 c:\users\braian\desktop\restoapp\include\detalleventa.h
 	"Fecha.h"
 
-1622674350 source:c:\users\braian\desktop\restoapp\src\ventas.cpp
+1624303530 source:c:\users\braian\desktop\restoapp\src\ventas.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Ventas.h"
 
-1622674350 c:\users\braian\desktop\restoapp\include\ventas.h
+1624303530 c:\users\braian\desktop\restoapp\include\ventas.h
 	"Fecha.h"
-	"DetalleVenta.h"
 
 1622674994 source:c:\users\braian\desktop\restoapp\src\menudemesas.cpp
 	"MenuDeMesas.h"
@@ -363,7 +365,7 @@
 
 1623264419 c:\users\braian\desktop\restoapp\include\menudemercaderias.h
 
-1623780504 source:c:\users\braian\desktop\restoapp\src\funcionesmercaderias.cpp
+1624304137 source:c:\users\braian\desktop\restoapp\src\funcionesmercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -372,7 +374,7 @@
 	"FuncionesMercaderias.h"
 	"Mercaderias.h"
 
-1623780650 c:\users\braian\desktop\restoapp\include\funcionesmercaderias.h
+1624304137 c:\users\braian\desktop\restoapp\include\funcionesmercaderias.h
 
 1622759330 source:c:\users\castillo\desktop\restoapp\src\carta.cpp
 	<iostream>
@@ -594,4 +596,81 @@
 	<cstdio>
 	<cstring>
 	"Mesas.h"
+
+1624135373 source:c:\users\braian\desktop\restoapp\src\menudepedidos.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"MenuDePedidos.h"
+	"FuncionesPedidos.h"
+
+1624134082 c:\users\braian\desktop\restoapp\include\menudepedidos.h
+
+1618872192 c:\users\braian\desktop\restoapp\include\consolemanager.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<string>
+	<string.h>
+	<iostream>
+	<conio.h>
+	<time.h>
+	<windows.h>
+	<wincon.h>
+
+1624135373 c:\users\braian\desktop\restoapp\include\funcionespedidos.h
+
+1624145302 source:c:\users\braian\desktop\restoapp\src\ingredientesdecarta.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"IngredientesDeCarta.h"
+
+1624145302 c:\users\braian\desktop\restoapp\include\ingredientesdecarta.h
+
+1624334077 source:c:\users\braian\desktop\restoapp\src\funcionescarta.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"FuncionesCarta.h"
+	"Carta.h"
+	"IngredientesDeCarta.h"
+
+1624311660 c:\users\braian\desktop\restoapp\include\funcionescarta.h
+
+1624312309 source:c:\users\braian\desktop\restoapp\src\menudecarta.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"FuncionesCarta.h"
+
+1624306206 c:\users\braian\desktop\restoapp\include\menudecarta.h
+
+1624334035 source:c:\users\braian\desktop\restoapp\src\funcionesventas.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"FuncionesReserva.h"
+	"FuncionesCarta.h"
+	"Carta.h"
+	"Fecha.h"
+
+1624331652 source:c:\users\braian\desktop\restoapp\src\menudeventas.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"FuncionesVentas.h"
+
+1624331621 c:\users\braian\desktop\restoapp\include\funcionesventas.h
+
+1624330804 c:\users\braian\desktop\restoapp\include\menudeventas.h
 
