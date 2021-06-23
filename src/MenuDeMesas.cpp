@@ -5,12 +5,12 @@ void dibujarMenudeMesas()
 {
     cout << "        MENU MESAS         " << endl;
     cout << " ------------------------- " << endl;
-    cout << " 1 -    NUEVA MESA         " << endl;
-    cout << " 2 -    BUSCAR MESA        " << endl;
-    cout << " 3 -    HACER RESERVA      " << endl;
-    cout << " 4 -    LISTADO MESAS      " << endl;
-    cout << " 5 -                       " << endl;   /// MODIFICACION DE MESA
-    cout << " 6 -                       " << endl;   /// BAJA LOGICA DE MESA
+    cout << " 1 - NUEVA MESA         " << endl;
+    cout << " 2 - BUSCAR MESA        " << endl;
+    cout << " 3 - LISTADO MESAS      " << endl;
+    cout << " 4 - MODIFICACION MESA  " << endl;
+    cout << " 5 - BAJA DE MESA       " << endl;
+    cout<<  " 6 - ALTA DE MESA DADA DE BAJA"<<endl;
     cout << " 0 - VOLVER AL MENU PRINCIPAL " << endl;
     cout << " ---------------------------- " << endl;
     cout << endl;
@@ -46,19 +46,25 @@ void MenuMesas()
         break;
         case 3:
         {
-            //HacerReserva();
+            ListadoMesas();
         }
         break;
 
         case 4:
         {
-            ListadoMesas();
+            ModificacionMesa();
         }
         break;
         case 5:
         {
-
-        } break;
+            BajaMesa();
+        }
+        break;
+        case 6:
+        {
+            AltadeMesadadaDebaja();
+        }
+        break;
         case 0:
         {
             salir=true;

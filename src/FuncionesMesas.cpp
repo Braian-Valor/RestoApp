@@ -37,9 +37,11 @@ void NuevaMesa()
         cin>>cantmesa;
     }
     bool Estado=true;
+    bool EstadoMesa=true;
     obj.setNroMesa(numMesa);
     obj.setCapacidad(cantmesa);
     obj.setEstado(Estado);
+    obj.setMesaOcupada(EstadoMesa);
     if(obj.escribirEnDisco())
     {
         cout<< "Mesa añadida con excito"<<endl;
@@ -124,24 +126,6 @@ void Buscar_Mesa()
     cin.get();
 }
 
-/*bool BuscarOcupacionMesa(int nro)
-{
-    Mesas reg;
-    int pos=0;
-    while(reg.leerDeDisco(pos++))
-    {
-        if(reg.getNroMesa()==nro && reg.getEstado()==false)
-        {
-            return false;
-        }
-        if(reg.getNroMesa()==nro && reg.getEstado()==true)
-        {
-            return true;
-        }
-
-    }
-    return false;
-}*/
 
 void BajaMesa()
 {
@@ -168,7 +152,7 @@ void BajaMesa()
         repeticion=buscarNroMesa(NumMesa);
     }
     obj.leerDeDisco(repeticion);
-    obj.setEstado(false);
+    obj.setMesaOcupada(false);
     if(obj.ModificarValorMesa(repeticion))
     {
         cout<< "La baja ha sido asignada con exito"<<endl;
@@ -216,125 +200,143 @@ void ModificacionMesa()
     }
     while(fread(&reg, sizeof(Mesas), 1, p)==1)
     {
-        while(!salir)
+        if(reg.getNroMesa()==NumMesa)
         {
-            system("cls");
-            cout << "REGISTRO A MODIFICAR" << endl;
-            cout << "--------------------" << endl;
-            reg.Mostrar();
-            cout << endl;
-            cout << " SELECCIONAR CAMPO A MODIFICAR " << endl;
-            cout << " ----------------------------- " << endl;
-            cout << " 1 - NUMERO DE MESA " << endl;
-            cout << " 2 - CAPACIDAD   " << endl;
-            //cout << " 3 - ESTADO    " << endl;   /// Estado?
-            cout << " 0 - SALIR    " << endl;
-            cout << endl;
-            cout << "OPCION: ";
-            cin >> opc;
-            system("cls");
-            switch (opc)
+            while(!salir)
             {
-            case 1:
-            {
-                int NuevoNum;
-                cout<< "Ingrese Nuevo Numero de Mesa: "<<endl;
-                cin>>NuevoNum;
-                while(NuevoNum<0 || buscarNroMesa(NuevoNum)>=0)
+                system("cls");
+                cout << "REGISTRO A MODIFICAR" << endl;
+                cout << "--------------------" << endl;
+                reg.Mostrar();
+                cout << endl;
+                cout << " SELECCIONAR CAMPO A MODIFICAR " << endl;
+                cout << " ----------------------------- " << endl;
+                cout << " 1 - NUMERO DE MESA " << endl;
+                cout << " 2 - CAPACIDAD   " << endl;
+                cout << " 3 - ESTADO    " << endl;   /// Estado?
+                cout << " 0 - SALIR    " << endl;
+                cout << endl;
+                cout << "OPCION: ";
+                cin >> opc;
+                system("cls");
+                switch (opc)
                 {
-                    int pos=0;
-                    system("cls");
-                    cout<< "Valor Ingresado Negativo o Numero de mesa Existentes en el archivo"<<endl;
-                    cout<< "Mesas Existentes: "<<endl;
-                    while(obj.leerDeDisco(pos++))
-                    {
-                        if(obj.getEstado()==true)
-                        {
-                            obj.Mostrar();
-                        }
-                    }
-                    cout<< "Favor de ingresar un valor valido: "<<endl;
+                case 1:
+                {
+                    int NuevoNum;
+                    cout<< "Ingrese Nuevo Numero de Mesa: "<<endl;
                     cin>>NuevoNum;
-                    buscarNroMesa(NuevoNum);
+                    while(NuevoNum<0 || buscarNroMesa(NuevoNum)>=0)
+                    {
+                        int pos=0;
+                        system("cls");
+                        cout<< "Valor Ingresado Negativo o Numero de mesa Existentes en el archivo"<<endl;
+                        cout<< "Mesas Existentes: "<<endl;
+                        while(obj.leerDeDisco(pos++))
+                        {
+                            if(obj.getEstado()==true)
+                            {
+                                obj.Mostrar();
+                            }
+                        }
+                        cout<< "Favor de ingresar un valor valido: "<<endl;
+                        cin>>NuevoNum;
+                        buscarNroMesa(NuevoNum);
+                    }
+                    reg.setNroMesa(NuevoNum);
+                    reg.ModificarValorMesa(repeticion);
                 }
-                reg.setNroMesa(NuevoNum);
-                reg.ModificarValorMesa(repeticion);
-            }
-            break;
-            case 2:
-            {
-                int NuevaCapacidad;
-                cout<< "Ingrese Nueva Capacidad: "<<endl;
-                cin>>NuevaCapacidad;
-                while(NuevaCapacidad<0)
+                break;
+                case 2:
                 {
-                    cout<< "Valor Ingresado Negativo favor de ingresar un valor positivo valido: "<<endl;
+                    int NuevaCapacidad;
+                    cout<< "Ingrese Nueva Capacidad: "<<endl;
                     cin>>NuevaCapacidad;
+                    while(NuevaCapacidad<0)
+                    {
+                        cout<< "Valor Ingresado Negativo favor de ingresar un valor positivo valido: "<<endl;
+                        cin>>NuevaCapacidad;
+                    }
+                    reg.setCapacidad(NuevaCapacidad);
+                    reg.ModificarValorMesa(repeticion);
                 }
-                reg.setCapacidad(NuevaCapacidad);
-                reg.ModificarValorMesa(repeticion);
+                break;
+                case 3:
+                {
+                    bool Estadonuevo;
+                    cout<< "Ingrese el numero 1 si la mesa ya fue desocupada:"<<endl;
+                    cin>>Estadonuevo;
+                    while(Estadonuevo!=1)
+                    {
+                        cout<< "Valor inadmisible presione 1 si desea cambiar el valor: "<<endl;
+                        cin>>Estadonuevo;
+                    }
+                    reg.setEstado(Estadonuevo);
+                    reg.ModificarValorMesa(repeticion);
+                }
+                break;
+                case 0:
+                {
+                    fclose(p);
+                    salir=true;
+                    cout << "VOLVIENDO AL MENU DE MESAS..";
+                }
+                break;
+                default:
+                {
+                    cout<< "Valor Ingresado Incorrecto"<<endl;
+                }
+                }
+                cin.get();
             }
-            break;
-            /*case 3:
-            {
-
-            }
-            break;*/
-            case 0:
-            {
-                fclose(p);
-                salir=true;
-                cout << "VOLVIENDO AL MENU DE MESAS..";
-            }
-            break;
-            default:
-            {
-                cout<< "Valor Ingresado Incorrecto"<<endl;
-            }
-            }
-            cin.get();
         }
     }
     fclose(p);
 }
-/*void HacerReserva()
+
+void AltadeMesadadaDebaja()
 {
-    Mesas obj,reg;
-    Fecha aux;
-    int numMesa,pos=0,valor2;
-    bool estado=false,valor;
-    obj.setEstado(estado);
-    cout<< "Ingrese la Fecha a Reservar: "<<endl;
-    aux.Cargar();                                                /// Falta Validaciones de Fechas y Num de mesa no Ocupado/reservado
-    obj.setFecha(aux);
-    cout<< "Ingrese el numero de Mesa a Reservar"<<endl;        ///Ver tema de Fecha del sistema
-    cin>>numMesa;
-    valor=BuscarOcupacionMesa(numMesa);
-    while(valor==false)
+    int pos=0,altanueva,posicion;
+    Mesas reg;
+    cout<< "Las mesas las cuales fueron dadas de baja son: "<<endl;
+    while(reg.leerDeDisco(pos++))
     {
-        system ("cls");
-        cout<< "Numero de mesa ingresado inexistente o ocupado reingrese numero de mesa: "<<endl;
-        cout<< "Mesas Libres: "<<endl;
-        while(reg.leerDeDisco(pos++))
+        if(reg.getMesaOcupada()==false)
         {
-            if(reg.getEstado()==true)
+            reg.MostrarFalsos();
+        }
+    }
+    cout<< "Ingrese el numero de mesa el cual quiera dar de alta nuevamente: "<<endl;
+    cin>>altanueva;
+    while(altanueva<0)
+    {
+        cout<< "Numero de mesa negativo/inexistente ingrese nuevamente: "<<endl;
+        cin>>altanueva;
+    }
+    posicion=buscarNroMesa(altanueva);
+    FILE *p;
+    p=fopen("datos/Mesas.dat", "rb+");
+    if(p==NULL)
+    {
+        cout << "ERROR, NO SE PUDO ABRIR EL ARCHIVO";
+        return;
+    }
+    while(fread(&reg, sizeof(Mesas), 1, p)==1)
+    {
+        if(reg.getNroMesa()==altanueva)
+        {
+            bool EstadoNuevo=true;
+            reg.setMesaOcupada(EstadoNuevo);
+            if(reg.ModificarValorMesa(posicion))
             {
-                reg.Mostrar();
+                cout<< "Mesa dada de alta Nuevamente"<<endl;
+            }
+            else
+            {
+                cout<< "La mesa no se ha podido dar de alta nuevamente"<<endl;
             }
         }
-        cin>>numMesa;
-        valor=BuscarOcupacionMesa(numMesa);
     }
-    valor2=buscarNroMesa(numMesa);
-    obj.leerDeDisco(valor2);
-    obj.setEstado(false);
-    if(obj.ModificarValorMesa(valor2))
-    {
-        cout<< "Reserva Añadida con excito"<<endl;
-    }
-    else
-    {
-        cout << "No se ha podido añadir la reserva"<<endl;
-    }
-    cin.get();
-}*/
+
+
+}

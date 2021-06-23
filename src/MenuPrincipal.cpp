@@ -70,11 +70,11 @@ void menuPrincipal() {
             }break;
 
             case 5:{
-                menuDeCarta();
+                /*menuDeCarta();*/
             }break;
 
             case 6:{
-                menuDeVentas();
+                /*menuDeVentas();*/
             }break;
         }
         cin.get();

@@ -376,38 +376,38 @@
 
 1624304137 c:\users\braian\desktop\restoapp\include\funcionesmercaderias.h
 
-1622759330 source:c:\users\castillo\desktop\restoapp\src\carta.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\carta.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Carta.h"
 
-1622759330 c:\users\castillo\desktop\restoapp\include\carta.h
+1624405075 c:\users\castillo\desktop\restoapp\include\carta.h
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\cliente.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\cliente.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Cliente.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\cliente.h
+1624405075 c:\users\castillo\desktop\restoapp\include\cliente.h
 	"Persona.h"
 	"Fecha.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\persona.h
+1624405075 c:\users\castillo\desktop\restoapp\include\persona.h
 
-1622759330 c:\users\castillo\desktop\restoapp\include\fecha.h
+1624405075 c:\users\castillo\desktop\restoapp\include\fecha.h
 
-1622759330 source:c:\users\castillo\desktop\restoapp\src\delivery.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\delivery.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Delivery.h"
 
-1622759330 c:\users\castillo\desktop\restoapp\include\delivery.h
+1624405075 c:\users\castillo\desktop\restoapp\include\delivery.h
 
 1622759330 source:c:\users\castillo\desktop\restoapp\src\detalleventa.cpp
 	<iostream>
@@ -420,7 +420,7 @@
 1622759330 c:\users\castillo\desktop\restoapp\include\detalleventa.h
 	"Fecha.h"
 
-1622759330 source:c:\users\castillo\desktop\restoapp\src\fecha.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\fecha.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -428,7 +428,7 @@
 	<ctime>
 	"Fecha.h"
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\funcionesclientes.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\funcionesclientes.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -438,19 +438,20 @@
 	"Fecha.h"
 	"Cliente.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\funcionesclientes.h
+1624405075 c:\users\castillo\desktop\restoapp\include\funcionesclientes.h
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\funcionesmercaderias.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\funcionesmercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	<locale.h>
 	"FuncionesMercaderias.h"
+	"Mercaderias.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\funcionesmercaderias.h
+1624405075 c:\users\castillo\desktop\restoapp\include\funcionesmercaderias.h
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\funcionesreserva.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\funcionesreserva.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -461,12 +462,12 @@
 	"Mesas.h"
 	"Cliente.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\reserva.h
+1624405075 c:\users\castillo\desktop\restoapp\include\reserva.h
 	"Fecha.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\funcionesreserva.h
+1624405075 c:\users\castillo\desktop\restoapp\include\funcionesreserva.h
 
-1623365445 c:\users\castillo\desktop\restoapp\include\mesas.h
+1624407127 c:\users\castillo\desktop\restoapp\include\mesas.h
 	"Cliente.h"
 	"Fecha.h"
 
@@ -480,7 +481,7 @@
 1623365188 c:\users\castillo\desktop\restoapp\include\ingresomercaderias.h
 	"Fecha.h"
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\menudeclientes.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\menudeclientes.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -489,9 +490,9 @@
 	"MenuDeClientes.h"
 	"FuncionesClientes.h"
 
-1622759330 c:\users\castillo\desktop\restoapp\include\menudeclientes.h
+1624405075 c:\users\castillo\desktop\restoapp\include\menudeclientes.h
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\menudemercaderias.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\menudemercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -500,12 +501,12 @@
 	"MenuDeMercaderias.h"
 	"FuncionesMercaderias.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\menudemercaderias.h
+1624405075 c:\users\castillo\desktop\restoapp\include\menudemercaderias.h
 
-1623365185 source:c:\users\castillo\desktop\restoapp\src\menudemesas.cpp
+1624407127 source:c:\users\castillo\desktop\restoapp\src\menudemesas.cpp
 	"MenuDeMesas.h"
 
-1622759330 c:\users\castillo\desktop\restoapp\include\menudemesas.h
+1624405075 c:\users\castillo\desktop\restoapp\include\menudemesas.h
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -513,7 +514,7 @@
 	<locale.h>
 	"FuncionesMesas.h"
 
-1623365445 c:\users\castillo\desktop\restoapp\include\funcionesmesas.h
+1624406979 c:\users\castillo\desktop\restoapp\include\funcionesmesas.h
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -522,7 +523,7 @@
 	"Mesas.h"
 	"Cliente.h"
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\menudereservas.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\menudereservas.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -530,67 +531,69 @@
 	"MenuDeReservas.h"
 	"FuncionesReserva.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\menudereservas.h
+1624405075 c:\users\castillo\desktop\restoapp\include\menudereservas.h
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\menuprincipal.cpp
+1624406244 source:c:\users\castillo\desktop\restoapp\src\menuprincipal.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	<locale.h>
+	"ConsoleManager.h"
 	"MenuDeClientes.h"
 	"MenuDeReservas.h"
 	"MenuDeMesas.h"
 	"MenuDeMercaderias.h"
+	"MenuDeCarta.h"
+	"MenuDeVentas.h"
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\mercaderias.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\mercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Mercaderias.h"
 
-1623365188 c:\users\castillo\desktop\restoapp\include\mercaderias.h
-	"IngresoMercaderias.h"
+1624405075 c:\users\castillo\desktop\restoapp\include\mercaderias.h
+	"Fecha.h"
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\persona.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\persona.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Persona.h"
 
-1623365188 source:c:\users\castillo\desktop\restoapp\src\reserva.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\reserva.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Reserva.h"
 
-1622759330 source:c:\users\castillo\desktop\restoapp\src\ventas.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\src\ventas.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"Ventas.h"
 
-1622759330 c:\users\castillo\desktop\restoapp\include\ventas.h
+1624405075 c:\users\castillo\desktop\restoapp\include\ventas.h
 	"Fecha.h"
-	"DetalleVenta.h"
 
-1623365188 source:c:\users\castillo\desktop\restoapp\main.cpp
+1624405075 source:c:\users\castillo\desktop\restoapp\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"MenuPrincipal.h"
 
-1622759330 c:\users\castillo\desktop\restoapp\include\menuprincipal.h
+1624405075 c:\users\castillo\desktop\restoapp\include\menuprincipal.h
 
-1623365445 source:c:\users\castillo\desktop\restoapp\src\funcionesmesas.cpp
+1624407990 source:c:\users\castillo\desktop\restoapp\src\funcionesmesas.cpp
 	"FuncionesMesas.h"
 
-1623365445 source:c:\users\castillo\desktop\restoapp\src\mesas.cpp
+1624407433 source:c:\users\castillo\desktop\restoapp\src\mesas.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -673,4 +676,29 @@
 1624331621 c:\users\braian\desktop\restoapp\include\funcionesventas.h
 
 1624330804 c:\users\braian\desktop\restoapp\include\menudeventas.h
+
+1624405075 source:c:\users\castillo\desktop\restoapp\src\ingredientesdecarta.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"IngredientesDeCarta.h"
+
+1624405075 c:\users\castillo\desktop\restoapp\include\ingredientesdecarta.h
+
+1624405075 c:\users\castillo\desktop\restoapp\include\consolemanager.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<string>
+	<string.h>
+	<iostream>
+	<conio.h>
+	<time.h>
+	<windows.h>
+	<wincon.h>
+
+1624405075 c:\users\castillo\desktop\restoapp\include\menudecarta.h
+
+1624405075 c:\users\castillo\desktop\restoapp\include\menudeventas.h
 

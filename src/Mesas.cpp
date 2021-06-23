@@ -26,7 +26,10 @@ void Mesas::setFecha(Fecha f)
 {
     Dia_Horario=f;
 }
-
+void Mesas::setMesaOcupada(bool v)
+{
+    MesaOcupada=v;
+}
 /// GETS
 
 int Mesas::getNroMesa()
@@ -45,6 +48,10 @@ Fecha Mesas::getFecha()
 {
     return Dia_Horario;
 }
+bool Mesas::getMesaOcupada()
+{
+    return MesaOcupada;
+}
 
 
 /// CARGAR Y MOSTRAR
@@ -60,20 +67,30 @@ void Mesas::Cargar()
 void Mesas::Mostrar()
 {
     //cout << "Nro DE MESA | CAPACIDAD | ESTADO " << endl;
+    if(MesaOcupada!=false)
+    {
+        cout << "     " << NroMesa << "            " << Capacidad << "       ";
+        if (Estado==true)
+        {
+            cout << "DISPONIBLE";
+        }
+        else
+        {
+            cout<< "NO DISPONIBLE";
+        }
+        cout << endl;
 
-    cout << "     " << NroMesa << "            " << Capacidad << "       ";
-    if (Estado==true)
-    {
-        cout << "DISPONIBLE";
     }
-    else
-    {
-        cout<< "NO DISPONIBLE";
-    }
-    cout << endl;
 
 }
+void Mesas::MostrarFalsos()
+{
+    if(MesaOcupada==false)
+    {
+        cout << "     " << NroMesa << "            " << Capacidad << "       "<<endl;
+    }
 
+}
 /// ARCHIVOS
 bool Mesas::escribirEnDisco()
 {

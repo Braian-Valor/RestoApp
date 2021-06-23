@@ -10,6 +10,7 @@ class Mesas
         int Capacidad;
         Fecha Dia_Horario;
         bool Estado;
+        bool MesaOcupada;
 
     public:
         /// SETS
@@ -17,16 +18,19 @@ class Mesas
         void setCapacidad(int);
         void setEstado(bool);
         void setFecha(Fecha);
+        void setMesaOcupada(bool);
 
         /// GETS
         int getNroMesa();
         int getCapacidad();
         bool getEstado();
         Fecha getFecha();
+        bool getMesaOcupada();
 
         /// CARGAR Y MOSTRAR
         void Cargar();
         void Mostrar();
+        void MostrarFalsos();
 
         /// ARCHIVOS
         bool escribirEnDisco();
