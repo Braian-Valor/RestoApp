@@ -42,8 +42,12 @@ void Ventas::Mostrar(){
     cout << "ID CLIENTE: " << _IDcliente << endl;
     cout << "ID PLATO:   " << _IDplato << endl;
     _fecha.Mostrar();
+    cout << endl;
     cout << "CANTIDAD:   " << _cantidad << endl;
-    cout << "METODO DE PAGO: " << _metodoDePago << endl;
+    cout << "METODO DE PAGO: ";
+    if(_metodoDePago==1){
+        cout << "EFECTIVO" << endl;
+    }
     cout << "DESCUENTO:  " << _descuento << endl;
     cout << "MONTO TOTAL: " << _montoTotal << endl;
 }
