@@ -53,9 +53,11 @@
 		<Unit filename="include/MenuDeReservas.h" />
 		<Unit filename="include/MenuDeVentas.h" />
 		<Unit filename="include/MenuPrincipal.h" />
+		<Unit filename="include/MenuReportes.h" />
 		<Unit filename="include/Mercaderias.h" />
 		<Unit filename="include/Mesas.h" />
 		<Unit filename="include/Persona.h" />
+		<Unit filename="include/Reportes.h" />
 		<Unit filename="include/Reserva.h" />
 		<Unit filename="include/Ventas.h" />
 		<Unit filename="main.cpp" />
@@ -77,9 +79,11 @@
 		<Unit filename="src/MenuDeReservas.cpp" />
 		<Unit filename="src/MenuDeVentas.cpp" />
 		<Unit filename="src/MenuPrincipal.cpp" />
+		<Unit filename="src/MenuReportes.cpp" />
 		<Unit filename="src/Mercaderias.cpp" />
 		<Unit filename="src/Mesas.cpp" />
 		<Unit filename="src/Persona.cpp" />
+		<Unit filename="src/Reportes.cpp" />
 		<Unit filename="src/Reserva.cpp" />
 		<Unit filename="src/Ventas.cpp" />
 		<Extensions>

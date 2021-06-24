@@ -533,7 +533,7 @@
 
 1624405075 c:\users\castillo\desktop\restoapp\include\menudereservas.h
 
-1624406244 source:c:\users\castillo\desktop\restoapp\src\menuprincipal.cpp
+1624570394 source:c:\users\castillo\desktop\restoapp\src\menuprincipal.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -571,7 +571,7 @@
 	<cstring>
 	"Reserva.h"
 
-1624405075 source:c:\users\castillo\desktop\restoapp\src\ventas.cpp
+1624570394 source:c:\users\castillo\desktop\restoapp\src\ventas.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -702,4 +702,63 @@
 1624405075 c:\users\castillo\desktop\restoapp\include\menudecarta.h
 
 1624405075 c:\users\castillo\desktop\restoapp\include\menudeventas.h
+
+1624405075 source:c:\users\castillo\desktop\restoapp\src\funcionescarta.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"FuncionesCarta.h"
+	"Carta.h"
+	"IngredientesDeCarta.h"
+
+1624405075 c:\users\castillo\desktop\restoapp\include\funcionescarta.h
+
+1624570394 source:c:\users\castillo\desktop\restoapp\src\funcionesventas.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"FuncionesReserva.h"
+	"FuncionesCarta.h"
+	"Carta.h"
+	"Fecha.h"
+	"Ventas.h"
+
+1624405075 source:c:\users\castillo\desktop\restoapp\src\menudecarta.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"FuncionesCarta.h"
+
+1624405075 source:c:\users\castillo\desktop\restoapp\src\menudeventas.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"FuncionesVentas.h"
+
+1624570394 c:\users\castillo\desktop\restoapp\include\funcionesventas.h
+
+1624571652 source:c:\users\castillo\desktop\restoapp\src\reportes.cpp
+	"Reportes.h"
+
+1624571652 c:\users\castillo\desktop\restoapp\include\reportes.h
+	"FuncionesVentas.h"
+	"Mercaderias.h"
+
+1624571746 source:c:\users\castillo\desktop\restoapp\src\menureportes.cpp
+	"MenuReportes.h"
+
+1624571746 c:\users\castillo\desktop\restoapp\include\menureportes.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<locale.h>
+	"Reportes.h"
 
