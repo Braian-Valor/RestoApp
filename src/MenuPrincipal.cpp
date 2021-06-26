@@ -11,8 +11,10 @@ using namespace std;
 #include "MenuDeMercaderias.h"
 #include "MenuDeCarta.h"
 #include "MenuDeVentas.h"
+#include "MenuReportes.h"
 
-void dibujarMenuPrincipal() {
+void dibujarMenuPrincipal()
+{
     cout << "     MENU PRINCIPAL     " << endl;
     cout << " -----------------------" << endl;
     cout << " 1 - CLIENTES           " << endl;
@@ -21,12 +23,14 @@ void dibujarMenuPrincipal() {
     cout << " 4 - MERCADERIAS        " << endl;
     cout << " 5 - CARTA              " << endl;
     cout << " 6 - VENTAS             " << endl;
+    cout << " 7 - REPORTES           " << endl;
     cout << " 0 - SALIR DEL PROGRAMA " << endl;
     cout << " -----------------------" << endl;
     cout << endl;
 }
 
-void menuPrincipal() {
+void menuPrincipal()
+{
     setlocale(LC_CTYPE, "Spanish");
 
     titulo("RestoApp");
@@ -35,7 +39,8 @@ void menuPrincipal() {
     bool salir=false;
     int opcion;
 
-    while(!salir) {
+    while(!salir)
+    {
         system("cls");
         dibujarMenuPrincipal();
         cout << "INGRESAR OPCION: ";
@@ -43,39 +48,61 @@ void menuPrincipal() {
         cin.ignore();
         system("cls");
 
-        switch(opcion) {
-            default: {
-                cout << "OPCION INCORRECTA";
-            }break;
+        switch(opcion)
+        {
+        default:
+        {
+            cout << "OPCION INCORRECTA";
+        }
+        break;
 
-            case 0: {
-                salir=true;
-                cout << "SALIENDO DEL PROGRAMA..";
-            }break;
+        case 0:
+        {
+            salir=true;
+            cout << "SALIENDO DEL PROGRAMA..";
+        }
+        break;
 
-            case 1: {
-                menuClientes();
-            }break;
+        case 1:
+        {
+            menuClientes();
+        }
+        break;
 
-            case 2: {
-                menuReservas();
-            }break;
+        case 2:
+        {
+            menuReservas();
+        }
+        break;
 
-            case 3:{
-                MenuMesas();
-            }break;
+        case 3:
+        {
+            MenuMesas();
+        }
+        break;
 
-            case 4:{
-                menuMercaderias();
-            }break;
+        case 4:
+        {
+            menuMercaderias();
+        }
+        break;
 
-            case 5:{
-                menuDeCarta();
-            }break;
+        case 5:
+        {
+            menuDeCarta();
+        }
+        break;
 
-            case 6:{
-                menuDeVentas();
-            }break;
+        case 6:
+        {
+            menuDeVentas();
+        }
+        break;
+        case 7:
+        {
+            MenuReportes();
+        }
+        break;
         }
         cin.get();
     }

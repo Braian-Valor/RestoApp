@@ -30,6 +30,11 @@ void Carta::Mostrar(){
     cout << _nroPlato << "___" << _nombrePlato << "_____$" << _precioPlato << endl;
 }
 
+void Carta::MostrarsinPrecio()
+{
+    cout << _nroPlato << "___" << _nombrePlato <<endl;
+}
+
 /// ARCHIVOS
 bool Carta::escribirEnDisco() {
     bool escribio;

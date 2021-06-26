@@ -23,6 +23,7 @@ class Carta{
 
         /// MOSTRAR
         void Mostrar();
+        void MostrarsinPrecio();
 
         /// ARCHIVOS
         bool escribirEnDisco();
