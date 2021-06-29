@@ -6,7 +6,7 @@
 using namespace std;
 #include "FuncionesVentas.h"
 
-void dibujarMenuDeVentas() {
+void dibujarMenuDeVentas(){
     cout << "     MENU VENTAS             " << endl;
     cout << " --------------------------- " << endl;
     cout << " 1 - HACER UNA VENTA         " << endl;
@@ -17,13 +17,13 @@ void dibujarMenuDeVentas() {
     cout << endl;
 }
 
-void menuDeVentas() {
+void menuDeVentas(){
     setlocale(LC_CTYPE, "Spanish");
 
     bool salir=false;
     int opcion;
 
-    while(!salir) {
+    while(!salir){
         system("cls");
         dibujarMenuDeVentas();
         cout << "INGRESAR OPCION: ";
@@ -31,18 +31,22 @@ void menuDeVentas() {
         cin.ignore();
         system("cls");
 
-        switch(opcion) {
-            default: {
+        switch(opcion){
+            default:{
                 cout << "OPCION INCORRECTA";
             }break;
 
-            case 0: {
+            case 0:{
                 salir=true;
                 cout << "VOLVIENDO AL MENU PRINCIPAL..";
             }break;
 
-            case 1: {
+            case 1:{
                 registrarVenta();
+            }break;
+
+            case 3:{
+                listarVentas();
             }break;
         }
         cin.get();

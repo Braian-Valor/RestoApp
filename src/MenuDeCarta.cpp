@@ -88,6 +88,7 @@ void menuDeCarta(){
                 cout << "INGRESAR NRO PLATO: ";
                 cin >> nroPlato;
                 listarIngredientesDePlato(nroPlato);
+                cin.get();
             }break;
         }
         cin.get();

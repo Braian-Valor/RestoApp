@@ -9,6 +9,45 @@ using namespace std;
 #include "Carta.h"
 #include "Fecha.h"
 #include "Ventas.h"
+#include "Mercaderias.h"
+#include "IngredientesDeCarta.h"
+
+void descontarMercaderias(int IDmercaderia, float cant){
+    Mercaderias reg;
+    float cantRestante;
+    FILE *p;
+    p=fopen("datos/mercaderias.dat", "rb+");
+    if(p==NULL){
+        cout << "ERROR, NO SE PUEDE ABRIR EL ARCHIVO DE MERCADERIAS" << endl;
+        cin.get();
+        return;
+    }
+
+    while(fread(&reg, sizeof(Mercaderias), 1, p)==1){
+        if(reg.getID()==IDmercaderia){
+            cantRestante=reg.getCantStock()-cant;
+            fseek(p, ftell(p)-sizeof(Mercaderias), 0);
+            reg.setCantStock(cantRestante);
+            fwrite(&reg, sizeof(Mercaderias), 1, p);
+            fclose(p);
+            return;
+        }
+    }
+    fclose(p);
+    return;
+}
+
+
+void buscarNroPlato(int nroPlato){
+    Ingredientes reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        if(reg.getNroPlato()==nroPlato){
+            descontarMercaderias(reg.getIDmercaderia(), reg.getCant());
+        }
+    }
+    return;
+}
 
 int cantidadComprasDeCliente(int IDcliente){
     Ventas reg;
@@ -71,6 +110,9 @@ void registrarVenta(){
                     regVenta.setMontoTotal(montoTotal);
                 }
             }
+
+            buscarNroPlato(nroPlato);
+
             cout << endl;
             if(regVenta.escribirEnDisco()==true){
                 regVenta.Mostrar();
@@ -112,7 +154,7 @@ void registrarVenta(){
             }
         }
 
-        if(cant==10){
+        if(cant>=10){
             //20%
             regVenta.setDescuento(20);
             while(regCarta.leerDeDisco(pos++)==true){
@@ -133,5 +175,13 @@ void registrarVenta(){
     else{
         cout << "EL CLIENTE BUSCADO NO EXISTE" << endl;
         cin.get();
+    }
+}
+
+void listarVentas(){
+    Ventas reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        reg.Mostrar();
     }
 }

@@ -132,6 +132,7 @@ void listarIngredientesDePlato(int nroPlato){
     while(reg.leerDeDisco(pos++)==true){
         if(reg.getNroPlato()==nroPlato){
             reg.mostrar();
+            cout << endl;
         }
     }
 }
