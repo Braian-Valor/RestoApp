@@ -35,8 +35,7 @@ class Reserva{
         bool escribirEnDisco();
         bool leerDeDisco(int pos);
 
-        /// CARGAR Y MOSTRAR
-        void cargar();
+        /// MOSTRAR
         void mostrar();
 };
 

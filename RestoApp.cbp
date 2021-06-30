@@ -59,6 +59,7 @@
 		<Unit filename="include/Reportes.h" />
 		<Unit filename="include/Reserva.h" />
 		<Unit filename="include/Ventas.h" />
+		<Unit filename="include/rlutil.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Carta.cpp" />
 		<Unit filename="src/Cliente.cpp" />

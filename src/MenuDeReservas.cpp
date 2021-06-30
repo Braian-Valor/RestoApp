@@ -3,14 +3,13 @@
 #include <cstdio>
 #include <cstring>
 using namespace std;
-#include "MenuDeReservas.h"
 #include "FuncionesReserva.h"
 
 void dibujarMenuDeReservas(){
     cout << "     MENU RESERVAS            " << endl;
     cout << " ---------------------------- " << endl;
     cout << " 1 - REGISTRAR RESERVA        " << endl;
-    cout << " 2 - BAJA RESERVA             " << endl;
+    cout << " 2 - ELIMINAR                 " << endl;
     cout << " 3 - MODIFICAR / ACTUALIZAR   " << endl;
     cout << " 4 - LISTAR RESERVAS          " << endl;
     cout << " 0 - VOLVER AL MENU PRINCIPAL " << endl;
@@ -64,7 +63,6 @@ void menuReservas(){
             case 4:{
                 listarReservas();
             }break;
-
         }
         cin.get();
     }

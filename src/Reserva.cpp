@@ -4,33 +4,26 @@
 #include <cstring>
 using namespace std;
 #include "Reserva.h"
-//#include "Fecha.h"
 
 /// SETS
 void Reserva::setNro(int nro){
     _nro=nro;
 }
-
 void Reserva::setNroMesa(int nroMesa){
     _nroMesa=nroMesa;
 }
-
 void Reserva::setIDcliente(int IDcliente){
     _IDcliente=IDcliente;
 }
-
 void Reserva::setFecha(Fecha fecha){
     _fecha=fecha;
 }
-
 void Reserva::setHora(int hora){
     _hora=hora;
 }
-
 void Reserva::setMinutos(int minutos){
     _minutos=minutos;
 }
-
 void Reserva::setEstado(bool estado){
     _estado=estado;
 }
@@ -58,7 +51,6 @@ bool Reserva::escribirEnDisco(){
     fclose(p);
     return escribio;
 }
-
 bool Reserva::leerDeDisco(int pos){
     bool leyo;
     FILE *p;
@@ -72,21 +64,7 @@ bool Reserva::leerDeDisco(int pos){
     return leyo;
 }
 
-/// CARGAR Y MOSTRAR
-void Reserva::cargar(){
-    cout << "NRO MESA: ";
-    cin >> _nroMesa;
-    cout << "ID CLIENTE: ";
-    cin >> _IDcliente;
-    cout << "FECHA: " << endl;
-    _fecha.Cargar();
-    cout << "HORA: ";
-    cin >> _hora;
-    cout << "MINUTOS: ";
-    cin >> _minutos;
-    _estado=true;
-}
-
+/// MOSTRAR
 void Reserva::mostrar(){
     if(_estado==true){
         cout << " " << _nro << "       " << _nroMesa << "         " << _IDcliente << "          ";

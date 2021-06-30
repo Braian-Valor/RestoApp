@@ -5,5 +5,4 @@
 void dibujarMenuDeClientes();
 void menuClientes();
 
-
 #endif // MENUDECLIENTES_H_INCLUDED

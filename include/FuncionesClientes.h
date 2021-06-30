@@ -9,7 +9,7 @@ bool registrarCliente();
 
 void modificarCliente(int ID);
 
-void eliminarCliente(int ID);
+bool eliminarCliente(int ID);
 
 void consultaCliente(int ID);
 

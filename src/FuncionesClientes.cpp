@@ -68,12 +68,20 @@ bool cargarDatos(){
     int edad;
     cout << "EDAD: ";
     cin >> edad;
+    while(edad<=15 || edad>=99){
+        cout << "EDAD: ";
+        cin >> edad;
+    }
     reg.setEdad(edad);
 
     bool encontro;
     int DNI;
     cout << "DNI: ";
     cin >> DNI;
+    while(DNI<35000000 || DNI>60000000){
+        cout << "DNI: ";
+        cin >> DNI;
+    }
     encontro=buscarDNI(DNI);
     if(encontro==true){
         cout << "ERROR, DNI EXISTENTE" << endl;
@@ -176,9 +184,14 @@ void modificarCliente(int ID){
 
                     case 1:{
                         char apellido[50];
-                        cout << "INGRESAR APELLIDO: ";
+                        cout << "APELLIDO: ";
                         fflush(stdin);
                         cin.getline(apellido, 50);
+                        while(apellido[0]==00 || apellido[0]==32){
+                            cout << "APELLIDO: ";
+                            fflush(stdin);
+                            cin.getline(apellido, 50);
+                        }
 
                         fseek(p, ftell(p)-sizeof(Cliente), 0);
                         reg.setApellido(apellido);
@@ -187,9 +200,14 @@ void modificarCliente(int ID){
 
                     case 2:{
                         char nombre[50];
-                        cout << "INGRESAR NOMBRE: ";
+                        cout << "NOMBRE: ";
                         fflush(stdin);
                         cin.getline(nombre, 50);
+                        while(nombre[0]==00 || nombre[0]==32){
+                            cout << "NOMBRE: ";
+                            fflush(stdin);
+                            cin.getline(nombre, 50);
+                        }
 
                         fseek(p, ftell(p)-sizeof(Cliente), 0);
                         reg.setNombre(nombre);
@@ -198,8 +216,12 @@ void modificarCliente(int ID){
 
                     case 3:{
                         int edad;
-                        cout << "INGRESAR EDAD: ";
+                        cout << "EDAD: ";
                         cin >> edad;
+                        while(edad<=15 || edad>=99){
+                            cout << "EDAD: ";
+                            cin >> edad;
+                        }
 
                         fseek(p, ftell(p)-sizeof(Cliente), 0);
                         reg.setEdad(edad);
@@ -242,36 +264,36 @@ void modificarCliente(int ID){
                 cin.get();
             }
         }
+        else{
+            cout << "EL ID DE CLIENTE NO EXISTE" << endl;
+            cin.get();
+            return;
+        }
     }
     fclose(p);
 }
 
-
-void eliminarCliente(int ID){
+bool eliminarCliente(int ID){
     Cliente reg;
     FILE *p;
     p=fopen("datos/clientes.dat", "rb+");
     if(p==NULL){
         cout << "ERROR, NO SE PUDO ABRIR EL ARCHIVO";
         cin.get();
-        return;
+        return false;
     }
 
     while(fread(&reg, sizeof(Cliente), 1, p)==1){
-        if(reg.getID()==ID){
-            fseek(p, ftell(p)-sizeof(Cliente), 0);
+        if(reg.getID()==ID && reg.getEstado()==true){
             reg.setEstado(false);
-            bool escribio=fwrite(&reg, sizeof(Cliente), 1, p);
+            fseek(p, ftell(p)-sizeof(Cliente), 0);
+            fwrite(&reg, sizeof(Cliente), 1, p);
             fclose(p);
-            if(escribio==true){
-                cout << "CLIENTE ELIMINADO";
-                cin.get();
-                return;
-            }
+            return true;
         }
-
     }
     fclose(p);
+    return false;
 }
 
 

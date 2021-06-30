@@ -28,8 +28,9 @@ bool Cliente::getEstado(){return _estado;}
 /// MOSTRAR
 void Cliente::Mostrar(){
     if(_estado==true){
-        cout << "ID: " << _ID << endl;
+        cout << "ID:       " << _ID << endl;
         Persona::Mostrar();
+        cout << "FEHCA:    ";
         _fechaIngreso.Mostrar();
         cout << endl;
     }

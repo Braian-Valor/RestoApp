@@ -4,16 +4,15 @@
 #include <cstring>
 #include <locale.h>
 using namespace std;
-#include "MenuDeClientes.h"
 #include "FuncionesClientes.h"
 
 void dibujarMenuDeClientes(){
-    cout << "     MENU CLIENTES           " << endl;
+    cout << "     MENU CLIENTES            " << endl;
     cout << " ---------------------------- " << endl;
     cout << " 1 - REGISTRAR                " << endl;
     cout << " 2 - MODIFICAR/ACTUALIZAR     " << endl;
     cout << " 3 - ELIMINAR                 " << endl;
-    cout << " 4 - CONSULTAR                " << endl;
+    cout << " 4 - CONSULTAR CLIENTE        " << endl;
     cout << " 5 - LISTAR CLIENTES          " << endl;
     cout << " 0 - VOLVER AL MENU PRINCIPAL " << endl;
     cout << " ---------------------------- " << endl;
@@ -64,10 +63,19 @@ void menuClientes(){
             }break;
 
             case 3:{
+                listarClientes();
                 int ID;
                 cout << "INGRESAR ID DE CLIENTE A ELIMINAR: ";
                 cin >> ID;
-                eliminarCliente(ID);
+                system("cls");
+                if(eliminarCliente(ID)==true){
+                    cout << "CLIENTE ELIMINADO";
+                    cin.get();
+                }
+                else{
+                    cout << "NO EXISTE EL ID QUE QUIERE ELIMINAR";
+                    cin.get();
+                }
             }break;
 
             case 4:{

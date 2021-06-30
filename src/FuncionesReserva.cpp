@@ -9,14 +9,13 @@ using namespace std;
 #include "Mesas.h"
 #include "Cliente.h"
 
-bool chequearFechaHora(int nroMesa, int dia, int mes, int anio, int hora, int minutos){
+bool chequearFechaHora(int nroMesa, int dia, int mes, int hora, int minutos){
     Reserva reg;
     int pos=0;
     while(reg.leerDeDisco(pos)==true){
         if(reg.getNroMesa()==nroMesa){
             if(reg.getFecha().getDia()==dia &&
                reg.getFecha().getMes()==mes &&
-               reg.getFecha().getAnio()==anio &&
                reg.getHora()==hora &&
                reg.getMinutos()==minutos){
 
@@ -41,32 +40,11 @@ bool buscarCliente(int IDcliente){
     return false;
 }
 
-void mesaReservada(int nroMesa){
-    Mesas reg;
-    FILE *p;
-    p=fopen("datos/mesas.dat", "rb+");
-    if(p==NULL){
-        cout << "ERROR, NO SE PUEDE ABRIR EL ARCHIVO";
-        cin.get();
-        return;
-    }
-
-    while(fread(&reg, sizeof(Mesas), 1, p)==1){
-        if(reg.getNroMesa()==nroMesa){
-            fseek(p, ftell(p)-sizeof(Mesas), 0);
-            reg.setEstado(false);
-            fwrite(&reg, sizeof(Mesas), 1, p);
-            fclose(p);
-        }
-    }
-    fclose(p);
-}
-
 bool buscarMesa(int nroMesa){
     Mesas reg;
     int pos=0;
     while(reg.leerDeDisco(pos)==true){
-        if(reg.getNroMesa()==nroMesa /*&& reg.getEstado()==true*/){
+        if(reg.getNroMesa()==nroMesa){
             return true;
         }
         pos++;
@@ -101,28 +79,26 @@ bool cargarDatosReserva(){
     int nroMesa;
     cout << "NRO MESA: ";
     cin >> nroMesa;
-    if(buscarMesa(nroMesa)==true){
-        reg.setNroMesa(nroMesa);
+    while(buscarMesa(nroMesa)==false){
+        cout << "NRO MESA: ";
+        cin >> nroMesa;
     }
-    else{
-        return false;
-    }
+    reg.setNroMesa(nroMesa);
 
     int IDcliente;
     cout << "ID CLIENTE: ";
     cin >> IDcliente;
-    if(buscarCliente(IDcliente)==true){
-        reg.setIDcliente(IDcliente);
+    while(buscarCliente(IDcliente)==false){
+        cout << "ID CLIENTE: ";
+        cin >> IDcliente;
     }
-    else{
-        return false;
-    }
+    reg.setIDcliente(IDcliente);
 
     Fecha f;
-    int dia, mes, anio;
+    int dia, mes;
     cout << "DIA: ";
     cin >> dia;
-    while(!(dia>0 && dia<32)){
+    while(!(dia>=reg.getFecha().getDia() && dia<32)){
         cout << "DIA: ";
         cin >> dia;
     }
@@ -130,39 +106,36 @@ bool cargarDatosReserva(){
 
     cout << "MES: ";
     cin >> mes;
-    while(!(mes>0 && mes<13)){
+    while(!(mes>=reg.getFecha().getMes() && mes<13)){
         cout << "MES: ";
         cin >> mes;
     }
     f.setMes(mes);
 
     cout << "AÑO: ";
-    cin >> anio;
-    while(!(anio==reg.getFecha().getAnio())){
-        cout << "AÑO: ";
-        cin >> anio;
-    }
-    f.setAnio(anio);
+    cout << f.getAnio() << endl;
+
+    reg.setFecha(f);
 
     int hora, minutos;
-    cout << "HORA: (11:00 A 23:30)";
+    cout << "HORA: (11 A 23)";
     cin >> hora;
     while(!(hora>10 && hora<24)){
-        cout << "HORA: (11:00 A 23:30)";
+        cout << "HORA: (11 A 23)";
         cin >> hora;
     }
     reg.setHora(hora);
 
-    cout << "MINUTOS: ";
+    cout << "MINUTOS: (0 A 59)";
     cin >> minutos;
-    while(!(minutos>=0 && minutos<61)){
+    while(!(minutos>=0 && minutos<60)){
         cout << "MINUTOS: ";
         cin >> minutos;
     }
     reg.setMinutos(minutos);
 
     bool chequeado;
-    chequeado=chequearFechaHora(nroMesa, dia, mes, anio, hora, minutos);
+    chequeado=chequearFechaHora(nroMesa, dia, mes, hora, minutos);
     if(chequeado==true){
         cout << "ERROR, LA MESA YA SE ENCUENTRA RESERVADA PARA LA FECHA Y HORA QUE DESEA";
         cin.get();
@@ -171,8 +144,6 @@ bool cargarDatosReserva(){
 
     bool estado=true;
     reg.setEstado(estado);
-
-    //mesaReservada(nroMesa);
 
     if(reg.escribirEnDisco()==true){
         return true;
@@ -191,7 +162,6 @@ bool registrarReserva(){
     }
 }
 
-
 void bajaReserva(){
     cout << "RESERVAS TOTALES HASTA EL MOMENTO" << endl;
     cout << "---------------------------------" << endl;
@@ -208,10 +178,11 @@ void bajaReserva(){
     int nro;
     cout << "INGRESAR EL NRO DE RESERVA A DAR DE BAJA: ";
     cin >> nro;
+    cout << endl;
 
     Reserva reg;
     while(fread(&reg, sizeof(Reserva), 1, p)==1){
-        if(reg.getNro()==nro){
+        if(reg.getNro()==nro && reg.getEstado()==true){
             fseek(p, ftell(p)-sizeof(Reserva), 0);
             reg.setEstado(false);
             fwrite(&reg, sizeof(Reserva), 1, p);
@@ -223,6 +194,9 @@ void bajaReserva(){
 
     }
     fclose(p);
+    cout << "ERROR, NO EXISTE EL NRO DE RESERVA";
+    cin.get();
+    return;
 }
 
 void modificarReserva(){
@@ -247,7 +221,7 @@ void modificarReserva(){
     }
 
     while(fread(&reg, sizeof(Reserva), 1, p)==1){
-        if(reg.getNro()==nro){
+        if(reg.getNro()==nro && reg.getEstado()!=false){
             while(!salir){
                 system("cls");
                 cout << "REGISTRO A MODIFICAR" << endl;
@@ -279,8 +253,12 @@ void modificarReserva(){
 
                     case 1:{
                         int nroMesa;
-                        cout << "INGRESAR NRO MESA: ";
+                        cout << "NRO MESA: ";
                         cin >> nroMesa;
+                        while(buscarMesa(nroMesa)==false){
+                            cout << "NRO MESA: ";
+                            cin >> nroMesa;
+                        }
 
                         fseek(p, ftell(p)-sizeof(Reserva), 0);
                         reg.setNroMesa(nroMesa);
@@ -289,8 +267,12 @@ void modificarReserva(){
 
                     case 2:{
                         int IDcliente;
-                        cout << "INGRESAR ID CLIENTE: ";
+                        cout << "ID CLIENTE: ";
                         cin >> IDcliente;
+                        while(buscarCliente(IDcliente)==false){
+                            cout << "ID CLIENTE: ";
+                            cin >> IDcliente;
+                        }
 
                         fseek(p, ftell(p)-sizeof(Reserva), 0);
                         reg.setIDcliente(IDcliente);
@@ -299,17 +281,26 @@ void modificarReserva(){
 
                     case 3:{
                         Fecha fecha;
-                        int dia, mes, anio;
+                        int dia, mes;
                         cout << "INGRESAR FECHA" << endl;
                         cout << "DIA: ";
                         cin >> dia;
+                        while(!(dia>=fecha.getDia() && dia<32)){
+                            cout << "DIA: ";
+                            cin >> dia;
+                        }
                         fecha.setDia(dia);
+
                         cout << "MES: ";
                         cin >> mes;
+                        while(!(mes>=fecha.getMes() && mes<13)){
+                            cout << "MES: ";
+                            cin >> mes;
+                        }
                         fecha.setMes(mes);
+
                         cout << "AÑO: ";
-                        cin >> anio;
-                        fecha.setAnio(anio);
+                        cout << fecha.getAnio() << endl;
 
                         fseek(p, ftell(p)-sizeof(Reserva), 0);
                         reg.setFecha(fecha);
@@ -319,10 +310,19 @@ void modificarReserva(){
                     case 4:{
                         int hora, minutos;
                         cout << "INGRESAR HORARIO" << endl;
-                        cout << "HORA: ";
+                        cout << "HORA:  (11 A 23) ";
                         cin >> hora;
-                        cout << "MINUTOS: ";
+                        while(!(hora>10 && hora<24)){
+                            cout << "HORA: (11 A 23) ";
+                            cin >> hora;
+                        }
+
+                        cout << "MINUTOS: (0 A 59) ";
                         cin >> minutos;
+                        while(!(minutos>=0 && minutos<60)){
+                            cout << "MINUTOS: (0 A 59) ";
+                            cin >> minutos;
+                        }
 
                         fseek(p, ftell(p)-sizeof(Reserva), 0);
                         reg.setHora(hora);
