@@ -19,7 +19,7 @@
 	<cstring>
 	<cstdio>
 
-1624852031 source:c:\users\braian\desktop\restoapp\main.cpp
+1625021777 source:c:\users\braian\desktop\restoapp\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -76,13 +76,12 @@
 	<cstring>
 	"Mercaderias.h"
 
-1624989190 source:c:\users\braian\desktop\restoapp\src\menuprincipal.cpp
+1625023329 source:c:\users\braian\desktop\restoapp\src\menuprincipal.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	<locale.h>
-	"ConsoleManager.h"
 	"MenuDeClientes.h"
 	"MenuDeReservas.h"
 	"MenuDeMesas.h"
@@ -612,7 +611,7 @@
 
 1624134082 c:\users\braian\desktop\restoapp\include\menudepedidos.h
 
-1624852031 c:\users\braian\desktop\restoapp\include\consolemanager.h
+1625023241 c:\users\braian\desktop\restoapp\include\consolemanager.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

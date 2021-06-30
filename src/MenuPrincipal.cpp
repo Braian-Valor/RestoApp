@@ -4,7 +4,6 @@
 #include <cstring>
 #include <locale.h>
 using namespace std;
-#include "ConsoleManager.h"
 #include "MenuDeClientes.h"
 #include "MenuDeReservas.h"
 #include "MenuDeMesas.h"
@@ -30,9 +29,6 @@ void dibujarMenuPrincipal(){
 
 void menuPrincipal(){
     setlocale(LC_CTYPE, "Spanish");
-
-    titulo("RestoApp");
-    cursor(false);
 
     bool salir=false;
     int opcion;

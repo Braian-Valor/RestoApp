@@ -36,7 +36,6 @@
 		</Compiler>
 		<Unit filename="include/Carta.h" />
 		<Unit filename="include/Cliente.h" />
-		<Unit filename="include/ConsoleManager.h" />
 		<Unit filename="include/Delivery.h" />
 		<Unit filename="include/Fecha.h" />
 		<Unit filename="include/FuncionesCarta.h" />
