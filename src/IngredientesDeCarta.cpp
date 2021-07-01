@@ -32,7 +32,7 @@ void Ingredientes::mostrar(){
 
 
 /// ARCHIVOS
-bool Ingredientes::escribirEnDisco() {
+bool Ingredientes::escribirEnDisco(){
     bool escribio;
     FILE *p;
     p=fopen("datos/ingredientes.dat", "ab");

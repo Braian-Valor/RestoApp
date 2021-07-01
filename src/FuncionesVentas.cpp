@@ -24,10 +24,17 @@ void descontarMercaderias(int IDmercaderia, float cant){
     }
 
     while(fread(&reg, sizeof(Mercaderias), 1, p)==1){
-        if(reg.getID()==IDmercaderia){
+        if(reg.getID()==IDmercaderia && reg.getCantStock()>0){
             cantRestante=reg.getCantStock()-cant;
             fseek(p, ftell(p)-sizeof(Mercaderias), 0);
             reg.setCantStock(cantRestante);
+            fwrite(&reg, sizeof(Mercaderias), 1, p);
+            fclose(p);
+            return;
+        }
+        else if(reg.getCantStock()<0){
+            reg.setCantStock(0);
+            fseek(p, ftell(p)-sizeof(Mercaderias), 0);
             fwrite(&reg, sizeof(Mercaderias), 1, p);
             fclose(p);
             return;
@@ -38,12 +45,14 @@ void descontarMercaderias(int IDmercaderia, float cant){
 }
 
 
-void buscarNroPlato(int nroPlato){
+void buscarNroPlato(int nroPlato, int cantidad){
     Ingredientes reg;
     int pos=0;
-    while(reg.leerDeDisco(pos++)==true){
-        if(reg.getNroPlato()==nroPlato){
-            descontarMercaderias(reg.getIDmercaderia(), reg.getCant());
+    for(int i=0; i<cantidad; i++){
+        while(reg.leerDeDisco(pos++)==true){
+            if(reg.getNroPlato()==nroPlato){
+                descontarMercaderias(reg.getIDmercaderia(), reg.getCant());
+            }
         }
     }
     return;
@@ -60,6 +69,8 @@ int cantidadComprasDeCliente(int IDcliente){
     return cont;
 }
 
+
+
 void registrarVenta(){
     Carta regCarta;
     int pos=0;
@@ -67,6 +78,8 @@ void registrarVenta(){
 
     Ventas regVenta;
     float montoTotal=0;
+
+    //chequearMercaderia();
 
     int IDcliente;
     cout << "INGRESAR ID CLIENTE: ";
@@ -83,10 +96,18 @@ void registrarVenta(){
         int nroPlato, cantidad;
         cout << "ELEGIR NRO PLATO: ";
         cin >> nroPlato;
+        while(nroPlato<0 && buscarPlato(nroPlato)==false){
+            cout << "ELEGIR NRO PLATO: ";
+            cin >> nroPlato;
+        }
         regVenta.setIDplato(nroPlato);
 
         cout << "CANTIDAD: ";
         cin >> cantidad;
+        while(cantidad<=0){
+            cout << "CANTIDAD: ";
+            cin >> cantidad;
+        }
         regVenta.setCantidad(cantidad);
 
         Fecha f;
@@ -111,7 +132,7 @@ void registrarVenta(){
                 }
             }
 
-            buscarNroPlato(nroPlato);
+            buscarNroPlato(nroPlato, cantidad);
 
             cout << endl;
             if(regVenta.escribirEnDisco()==true){
@@ -130,6 +151,9 @@ void registrarVenta(){
                     regVenta.setMontoTotal(montoTotal);
                 }
             }
+
+            buscarNroPlato(nroPlato, cantidad);
+
             cout << endl;
             if(regVenta.escribirEnDisco()==true){
                 regVenta.Mostrar();
@@ -147,6 +171,9 @@ void registrarVenta(){
                     regVenta.setMontoTotal(montoTotal);
                 }
             }
+
+            buscarNroPlato(nroPlato, cantidad);
+
             cout << endl;
             if(regVenta.escribirEnDisco()==true){
                 regVenta.Mostrar();
@@ -164,6 +191,9 @@ void registrarVenta(){
                     regVenta.setMontoTotal(montoTotal);
                 }
             }
+
+            buscarNroPlato(nroPlato, cantidad);
+
             cout << endl;
             if(regVenta.escribirEnDisco()==true){
                 regVenta.Mostrar();
@@ -183,5 +213,6 @@ void listarVentas(){
     int pos=0;
     while(reg.leerDeDisco(pos++)==true){
         reg.Mostrar();
+        cout << endl;
     }
 }

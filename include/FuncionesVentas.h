@@ -3,7 +3,7 @@
 
 /// PROTOTIPOS
 void descontarMercaderias(int IDmercaderia, float cant);
-void buscarNroPlato(int nroPlato);
+void buscarNroPlato(int nroPlato, int cantidad);
 int cantidadComprasDeCliente(int IDcliente);
 void registrarVenta();
 

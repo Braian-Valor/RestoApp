@@ -249,7 +249,7 @@
 
 1625103066 c:\users\braian\desktop\restoapp\include\carta.h
 
-1625103093 source:c:\users\braian\desktop\restoapp\src\carta.cpp
+1625110019 source:c:\users\braian\desktop\restoapp\src\carta.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -622,7 +622,7 @@
 
 1624135373 c:\users\braian\desktop\restoapp\include\funcionespedidos.h
 
-1625103637 source:c:\users\braian\desktop\restoapp\src\ingredientesdecarta.cpp
+1625110583 source:c:\users\braian\desktop\restoapp\src\ingredientesdecarta.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -653,7 +653,7 @@
 
 1625103033 c:\users\braian\desktop\restoapp\include\menudecarta.h
 
-1624993096 source:c:\users\braian\desktop\restoapp\src\funcionesventas.cpp
+1625110692 source:c:\users\braian\desktop\restoapp\src\funcionesventas.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -675,9 +675,9 @@
 	<locale.h>
 	"FuncionesVentas.h"
 
-1624992573 c:\users\braian\desktop\restoapp\include\funcionesventas.h
+1625110623 c:\users\braian\desktop\restoapp\include\funcionesventas.h
 
-1624852031 c:\users\braian\desktop\restoapp\include\menudeventas.h
+1625105195 c:\users\braian\desktop\restoapp\include\menudeventas.h
 
 1624405075 source:c:\users\castillo\desktop\restoapp\src\ingredientesdecarta.cpp
 	<iostream>

@@ -27,7 +27,9 @@ bool Carta::getEstado(){return _estado;}
 
 /// MOSTRAR
 void Carta::Mostrar(){
-    cout << _nroPlato << "___" << _nombrePlato << "_____$" << _precioPlato << endl;
+    if(_estado==true){
+        cout << _nroPlato << "___" << _nombrePlato << "_____$" << _precioPlato << endl;
+    }
 }
 
 void Carta::MostrarsinPrecio()

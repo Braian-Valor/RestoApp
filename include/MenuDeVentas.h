@@ -1,7 +1,7 @@
 #ifndef MENUDEVENTAS_H_INCLUDED
 #define MENUDEVENTAS_H_INCLUDED
 
-/// PROTOTIPOS
+/// PROTOTIPOS DEL MENU DE VENTAS
 void dibujarMenuDeVentas();
 void menuDeVentas();
 
