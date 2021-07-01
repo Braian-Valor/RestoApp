@@ -351,7 +351,7 @@
 1623262309 c:\users\braian\desktop\restoapp\include\ingresomercaderias.h
 	"Fecha.h"
 
-1625182121 source:c:\users\braian\desktop\restoapp\src\menudemercaderias.cpp
+1625182260 source:c:\users\braian\desktop\restoapp\src\menudemercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -783,7 +783,7 @@
 	<locale.h>
 	"Reportes.h"
 
-1625175603 c:\users\braian\desktop\restoapp\include\reportes.h
+1625183595 c:\users\braian\desktop\restoapp\include\reportes.h
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -795,11 +795,10 @@
 	"Fecha.h"
 	"Carta.h"
 
-1625175603 source:c:\users\braian\desktop\restoapp\src\menureportes.cpp
+1625183595 source:c:\users\braian\desktop\restoapp\src\menureportes.cpp
 	"MenuReportes.h"
 
-1625175603 source:c:\users\braian\desktop\restoapp\src\reportes.cpp
-	"Reportes.h"
+1625183595 source:c:\users\braian\desktop\restoapp\src\reportes.cpp
 	"Reportes.h"
 
 1625175603 c:\users\braian\desktop\restoapp\include\rlutil.h

@@ -5,8 +5,9 @@ void dibujarMenudeReportes()
     cout << "        MENU REPORTES        " << endl;
     cout << "  ------------------------- " << endl;
     cout << " 1 - RECAUDACION ANUAL         " << endl;
-    cout << " 2 - RECAUDACION DIARIA        " << endl;
-    cout << " 3 - RECAUDACION POR PLATO     " << endl;
+    cout << " 2 - RECAUDACION MENSUAL       " <<endl;
+    cout << " 3 - RECAUDACION DIARIA        " << endl;
+    cout << " 4 - RECAUDACION POR PLATO     " << endl;
     cout << " 0 - VOLVER AL MENU PRINCIPAL " << endl;
     cout << " ---------------------------- " << endl;
     cout << endl;
@@ -37,10 +38,15 @@ void MenuReportes()
         break;
         case 2:
         {
-            RecaudacionDiaria();
+            RecaudacionMensual();
         }
         break;
         case 3:
+        {
+            RecaudacionDiaria();
+        }
+        break;
+        case 4:
         {
             RecaudacionPorPlato();
         }

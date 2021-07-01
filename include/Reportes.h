@@ -1,5 +1,6 @@
 #ifndef REPORTES_H_INCLUDED
 #define REPORTES_H_INCLUDED
+
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
@@ -13,9 +14,11 @@ using namespace std;
 #include "Carta.h"
 
 void RecaudacionAnual();
+void RecaudacionMensual();
 void RecaudacionDiaria();
 void RecaudacionPorPlato();
-int buscador(int,int);
+int buscadoranio(int);
+int buscadormes(int,int);
 int SumatoriadiaFinal(int);
 int buscarplato(int);
 

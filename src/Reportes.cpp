@@ -1,8 +1,60 @@
 #include "Reportes.h"
 
-#include "Reportes.h"
 
-int buscador(int anio,int mes)
+int buscadoranio(int *vec)
+{
+    int suma=0;
+    for(int i=0; i<12; i++)
+    {
+        suma+=vec[i];
+    }
+    return suma;
+}
+
+
+
+
+void RecaudacionAnual()
+{
+    int suma,anio,vec[12]={},pos=0;
+    Ventas reg;
+    Fecha obj;
+    cout<< "Ingrese el anio el cual desea buscar: "<<endl;
+    cin>>anio;
+    while (anio<0)
+    {
+        cout<< "Valor ingresado negativo, favor de ingresar un anio valido: "<<endl;
+        cin>>anio;
+    }
+    while(reg.leerDeDisco(pos++))
+    {
+        if(reg.getFechaVenta().getAnio()==anio)
+        {
+            vec[reg.getFechaVenta().getMes()-1]+=reg.getMontoTotal();
+        }
+    }
+    suma=buscadoranio(vec);
+    if(suma>0)
+    {
+        for(int i=0; i<12; i++)
+        {
+            cout<<"MES: "<< i+1 <<" " << "RECAUDACION: "<< "$" <<vec[i]<<endl;
+        }
+        cout<< "La suma vendida anio es de: "<<endl;
+        cout<< suma;
+        cin.get();
+    }
+    else
+    {
+        system("cls");
+        cout<< "El anio elegido no tiene ninguna recaudacion "<<endl;
+        cin.get();
+    }
+
+
+}
+
+int buscadormes(int mes, int anio)
 {
     Ventas obj;
     int pos=0,suma=0;
@@ -17,13 +69,11 @@ int buscador(int anio,int mes)
 }
 
 
-
-
-void RecaudacionAnual()
+void RecaudacionMensual()
 {
-    int suma,anio,mes;
+    int suma,mes,anio;
     Ventas reg;
-    cout<< "Ingrese el anio el cual desea buscar: "<<endl;
+    cout<< "Ingrese el anio el cual desea saber: "<<endl;
     cin>>anio;
     while (anio<0)
     {
@@ -32,15 +82,24 @@ void RecaudacionAnual()
     }
     cout<< "Ingrese el mes el cual desea buscar: "<<endl;
     cin>>mes;
-    while(mes<0)
+    while (mes<0)
     {
         cout<< "Valor ingresado negativo, favor de ingresar un mes valido: "<<endl;
         cin>>mes;
     }
-    suma=buscador(anio,mes);
-    cout<< "La suma vendida de ese mes y anio son: "<<endl;
-    cout<< suma;
-    cin.get();
+    suma=buscadormes(mes, anio);
+    if (suma>0)
+    {
+        cout<< "La suma vendida en el mes es de: "<<endl;
+        cout<< suma;
+        cin.get();
+    }
+    else
+    {
+        system("cls");
+        cout<< "El anio/mes que selecciono no posee ninguna recaudacion "<<endl;
+        cin.get();
+    }
 
 }
 
@@ -126,5 +185,3 @@ void RecaudacionPorPlato()
     cout<<"$"<<recaudacion;
     cin.get();
 }
-
-
