@@ -69,7 +69,8 @@ void Mesas::Mostrar()
     //cout << "Nro DE MESA | CAPACIDAD | ESTADO " << endl;
     if(MesaOcupada!=false)
     {
-        cout << "     " << NroMesa << "            " << Capacidad << "       ";
+        cout << "  " <<"MESA"  << "        "  << "CAPACIDAD "<<"        "<<endl;
+        cout << "   " << NroMesa << "              " << Capacidad << "      ";
         if (Estado==true)
         {
             cout << "DISPONIBLE";

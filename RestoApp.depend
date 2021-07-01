@@ -591,7 +591,7 @@
 1625169944 source:c:\users\castillo\desktop\restoapp\src\funcionesmesas.cpp
 	"FuncionesMesas.h"
 
-1625084794 source:c:\users\castillo\desktop\restoapp\src\mesas.cpp
+1625175485 source:c:\users\castillo\desktop\restoapp\src\mesas.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -748,7 +748,7 @@
 
 1625169519 c:\users\castillo\desktop\restoapp\include\funcionesventas.h
 
-1625170631 source:c:\users\castillo\desktop\restoapp\src\reportes.cpp
+1625173609 source:c:\users\castillo\desktop\restoapp\src\reportes.cpp
 	"Reportes.h"
 	"Reportes.h"
 
@@ -764,7 +764,7 @@
 	"Fecha.h"
 	"Carta.h"
 
-1625169853 source:c:\users\castillo\desktop\restoapp\src\menureportes.cpp
+1625173609 source:c:\users\castillo\desktop\restoapp\src\menureportes.cpp
 	"MenuReportes.h"
 
 1625169891 c:\users\castillo\desktop\restoapp\include\menureportes.h
