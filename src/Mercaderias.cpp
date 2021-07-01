@@ -36,7 +36,6 @@ void Mercaderias::Mostrar(){
     }
 }
 
-
 /// ARCHIVOS
 bool Mercaderias::escribirEnDisco(){
     bool escribio;

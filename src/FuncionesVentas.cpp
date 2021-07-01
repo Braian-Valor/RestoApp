@@ -69,6 +69,48 @@ int cantidadComprasDeCliente(int IDcliente){
     return cont;
 }
 
+void bajaDePlato(int nroPlato){
+    Carta reg;
+    FILE *p;
+    p=fopen("datos/carta.dat", "rb+");
+    if(p==NULL){
+        cout << "ERROR, NO SE PUEDE ABRIR EL ARCHIVO" << endl;
+        cin.get();
+        return;
+    }
+
+    while(fread(&reg, sizeof(Carta), 1, p)==1){
+        if(reg.getNroPlato()==nroPlato){
+            reg.setEstado(false);
+            fseek(p, ftell(p)-sizeof(Carta), 0);
+            fwrite(&reg, sizeof(Carta), 1, p);
+            fclose(p);
+            return;
+        }
+    }
+    fclose(p);
+    return;
+}
+
+void chequearIngredientesParaBaja(int IDmercaderia){
+    Ingredientes reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        if(reg.getIDmercaderia()==IDmercaderia){
+            bajaDePlato(reg.getNroPlato());
+        }
+    }
+}
+
+void chequearMercaderia(){
+    Mercaderias reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        if(reg.getCantStock()==0){
+            chequearIngredientesParaBaja(reg.getID());
+        }
+    }
+}
 
 
 void registrarVenta(){
@@ -79,7 +121,7 @@ void registrarVenta(){
     Ventas regVenta;
     float montoTotal=0;
 
-    //chequearMercaderia();
+    chequearMercaderia();
 
     int IDcliente;
     cout << "INGRESAR ID CLIENTE: ";
@@ -96,7 +138,7 @@ void registrarVenta(){
         int nroPlato, cantidad;
         cout << "ELEGIR NRO PLATO: ";
         cin >> nroPlato;
-        while(nroPlato<0 && buscarPlato(nroPlato)==false){
+        while(nroPlato<0 || buscarPlato(nroPlato)==false){
             cout << "ELEGIR NRO PLATO: ";
             cin >> nroPlato;
         }
@@ -207,6 +249,7 @@ void registrarVenta(){
         cin.get();
     }
 }
+
 
 void listarVentas(){
     Ventas reg;

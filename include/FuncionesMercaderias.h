@@ -11,4 +11,8 @@ void eliminarMercaderia(char *nombre);
 
 void listarMercaderias();
 
+bool altaCarta(int NroPlato);
+bool altaPlato(int IDmercaderia);
+void mercaderiaReponer();
+
 #endif // FUNCIONESMERCADERIAS_H_INCLUDED

@@ -7,6 +7,10 @@ void buscarNroPlato(int nroPlato, int cantidad);
 int cantidadComprasDeCliente(int IDcliente);
 void registrarVenta();
 
+void bajaDePlato(int nroPlato);
+void chequearIngredientesParaBaja(int IDmercaderia);
+void chequearMercaderia();
+
 
 void listarVentas();
 

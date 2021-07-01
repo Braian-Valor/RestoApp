@@ -31,11 +31,10 @@ bool chequearFechaHora(int nroMesa, int dia, int mes, int hora, int minutos){
 bool buscarCliente(int IDcliente){
     Cliente reg;
     int pos=0;
-    while(reg.leerDeDisco(pos)==true){
+    while(reg.leerDeDisco(pos++)==true){
         if(reg.getID()==IDcliente){
             return true;
         }
-        pos++;
     }
     return false;
 }

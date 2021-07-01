@@ -7,11 +7,10 @@ using namespace std;
 #include "FuncionesVentas.h"
 
 void dibujarMenuDeVentas(){
-    cout << "     MENU VENTAS             " << endl;
-    cout << " --------------------------- " << endl;
-    cout << " 1 - HACER UNA VENTA         " << endl;
-    cout << " 2 - MODIFICAR / ACTUALIZAR  " << endl;
-    cout << " 3 - LISTAR VENTAS           " << endl;
+    cout << "     MENU VENTAS              " << endl;
+    cout << " ---------------------------- " << endl;
+    cout << " 1 - HACER UNA VENTA          " << endl;
+    cout << " 2 - LISTAR VENTAS            " << endl;
     cout << " 0 - VOLVER AL MENU PRINCIPAL " << endl;
     cout << " ---------------------------- " << endl;
     cout << endl;
@@ -45,7 +44,7 @@ void menuDeVentas(){
                 registrarVenta();
             }break;
 
-            case 3:{
+            case 2:{
                 listarVentas();
             }break;
         }

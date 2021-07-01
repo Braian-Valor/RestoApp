@@ -14,6 +14,7 @@ void dibujarMenuDeMercaderias(){
     cout << " 2 - MODIFICAR/ACTUALIZAR " << endl;
     cout << " 3 - ELIMINAR             " << endl;
     cout << " 4 - LISTAR MERCADERIA    " << endl;
+    cout << " 5 - MERCADERIA A REPONER " << endl;
     cout << " 0 - SALIR DEL PROGRAMA   " << endl;
     cout << " ------------------------ " << endl;
     cout << endl;
@@ -75,6 +76,10 @@ void menuMercaderias(){
 
             case 4:{
                 listarMercaderias();
+            }break;
+
+            case 5:{
+                mercaderiaReponer();
             }break;
         }
         cin.get();

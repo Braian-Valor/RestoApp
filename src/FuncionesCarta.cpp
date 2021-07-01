@@ -111,7 +111,7 @@ bool buscarPlato(int nroPlato){
     Carta reg;
     int pos=0;
     while(reg.leerDeDisco(pos++)==true){
-        if(reg.getNroPlato()==nroPlato){
+        if(reg.getNroPlato()==nroPlato && reg.getEstado()==true){
             return true;
         }
     }

@@ -6,6 +6,8 @@
 using namespace std;
 #include "FuncionesMercaderias.h"
 #include "Mercaderias.h"
+#include "Carta.h"
+#include "IngredientesDeCarta.h"
 
 int contarRegistrosDeMercaderias(){
     int  pos=0, cont=0;
@@ -170,3 +172,81 @@ void listarMercaderias(){
     }
 }
 
+bool existeIDmercaderia(int ID){
+    Mercaderias reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        if(reg.getID()==ID){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool altaCarta(int NroPlato){
+    Carta reg;
+    FILE *p;
+    p=fopen("datos/carta.dat", "rb+");
+    if(p==NULL) {
+        return false;
+    }
+    while(fread(&reg, sizeof(Carta), 1, p)==1){
+        if(reg.getNroPlato()==NroPlato && reg.getEstado()==false){
+            fseek(p, ftell(p)-sizeof(Carta), 0);
+            reg.setEstado(true);
+            fwrite(&reg, sizeof(Carta), 1, p);
+            fclose(p);
+            return true;
+        }
+    }
+    fclose(p);
+    return false;
+}
+
+bool altaPlato(int IDmercaderia, int cantStock){
+    Ingredientes reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        if(reg.getIDmercaderia()==IDmercaderia){
+            if(altaCarta(reg.getNroPlato())==true){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void mercaderiaReponer(){
+    Mercaderias reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        if(reg.getCantStock()==0){
+            reg.Mostrar();
+            cout << endl;
+        }
+    }
+
+    float cantStock;
+    int IDmercaderia;
+    cout << "ID MERCADERIA: ";
+    cin >> IDmercaderia;
+    while(existeIDmercaderia(IDmercaderia)==false){
+        cout << "ID MERCADERIA: ";
+        cin >> IDmercaderia;
+    }
+    cout << endl;
+    cout << "CANTIDAD EN STOCK: ";
+    cin >> cantStock;
+    while(!(cantStock>0)){
+        cout << "CANTIDAD EN STOCK: ";
+        cin >> cantStock;
+    }
+
+
+    if(altaPlato(IDmercaderia, cantStock)==true){
+        cout << "PLATO DE ALTA";
+        cin.get();
+        return;
+    }
+    return;
+}
