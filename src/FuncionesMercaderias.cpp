@@ -73,7 +73,7 @@ bool registrarMercaderia(){
     }
 }
 
-void modificarMercaderia(char *nombre){
+void modificarMercaderia(int ID){
     int opcion;
     bool salir=false;
     Mercaderias reg;
@@ -85,7 +85,7 @@ void modificarMercaderia(char *nombre){
     }
 
     while(fread(&reg, sizeof(Mercaderias), 1, p)==1){
-        if(strcmp(reg.getNombre(), nombre)==0 && reg.getEstado()!=false){
+        if(reg.getID()==ID && reg.getEstado()!=false){
             while(!salir){
                 system("cls");
                 cout << "REGISTRO A MODIFICAR" << endl;
@@ -133,7 +133,7 @@ void modificarMercaderia(char *nombre){
 }
 
 
-void eliminarMercaderia(char *nombre){
+void eliminarMercaderia(int ID){
     Mercaderias reg;
     FILE *p;
     p=fopen("datos/mercaderias.dat", "rb+");
@@ -144,7 +144,7 @@ void eliminarMercaderia(char *nombre){
     }
 
     while(fread(&reg, sizeof(Mercaderias), 1, p)==1){
-        if(strcmp(reg.getNombre(), nombre)==0 && reg.getEstado()!=false){
+        if(reg.getID()==ID && reg.getEstado()!=false){
             fseek(p, ftell(p)-sizeof(Mercaderias), 0);
             reg.setEstado(false);
             bool escribio=fwrite(&reg, sizeof(Mercaderias), 1, p);
@@ -224,6 +224,11 @@ void mercaderiaReponer(){
             reg.Mostrar();
             cout << endl;
         }
+        else if(reg.getCantStock()!=0){
+            cout << "NO HAY MERCADERIA POR REPONER" << endl;
+            cin.get();
+            return;
+        }
     }
 
     float cantStock;
@@ -242,6 +247,25 @@ void mercaderiaReponer(){
         cin >> cantStock;
     }
 
+    FILE *p;
+    p=fopen("datos/mercaderias.dat", "rb+");
+    if(p==NULL){
+        cout << "ERROR, AL ABRIR EL ARCHIVO";
+        cin.get();
+        return;
+    }
+
+    while(fread(&reg, sizeof(Mercaderias), 1, p)==1){
+        if(reg.getID()==IDmercaderia){
+            reg.setCantStock(cantStock);
+            fseek(p, ftell(p)-sizeof(Mercaderias), 0);
+            fwrite(&reg, sizeof(Mercaderias), 1, p);
+            fclose(p);
+        }
+        reg.Mostrar();
+        cin.get();
+    }
+    fclose(p);
 
     if(altaPlato(IDmercaderia, cantStock)==true){
         cout << "PLATO DE ALTA";

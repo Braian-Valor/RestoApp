@@ -58,20 +58,17 @@ void menuMercaderias(){
             }break;
 
             case 2:{
-                char nombre[50];
-                cout << "NOMBRE: ";
-                fflush(stdin);
-                cin.getline(nombre,50);
-                modificarMercaderia(nombre);
+                int ID;
+                cout << "ID: ";
+                cin >> ID;
+                modificarMercaderia(ID);
             }break;
 
             case 3:{
-                char nombre[50];
-                cout << "NOMBRE: ";
-                fflush(stdin);
-                cin.getline(nombre,50);
-                cout << endl;
-                eliminarMercaderia(nombre);
+                int ID;
+                cout << "ID: ";
+                cin >> ID;
+                eliminarMercaderia(ID);
             }break;
 
             case 4:{

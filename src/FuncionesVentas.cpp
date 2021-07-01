@@ -180,6 +180,7 @@ void registrarVenta(){
             if(regVenta.escribirEnDisco()==true){
                 regVenta.Mostrar();
                 cin.get();
+                return;
             }
         }
 
@@ -200,6 +201,7 @@ void registrarVenta(){
             if(regVenta.escribirEnDisco()==true){
                 regVenta.Mostrar();
                 cin.get();
+                return;
             }
         }
 
@@ -220,6 +222,7 @@ void registrarVenta(){
             if(regVenta.escribirEnDisco()==true){
                 regVenta.Mostrar();
                 cin.get();
+                return;
             }
         }
 
@@ -240,6 +243,7 @@ void registrarVenta(){
             if(regVenta.escribirEnDisco()==true){
                 regVenta.Mostrar();
                 cin.get();
+                return;
             }
         }
 

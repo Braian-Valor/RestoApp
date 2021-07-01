@@ -6,8 +6,8 @@ int contarRegistrosDeMercaderias();
 bool cargarDatosMercaderia();
 bool registrarMercaderia();
 
-void modificarMercaderia(char *nombre);
-void eliminarMercaderia(char *nombre);
+void modificarMercaderia(int ID);
+void eliminarMercaderia(int ID);
 
 void listarMercaderias();
 
