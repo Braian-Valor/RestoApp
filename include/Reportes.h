@@ -15,7 +15,6 @@ using namespace std;
 void RecaudacionAnual();
 void RecaudacionDiaria();
 void RecaudacionPorPlato();
-void CantMercaderiaDisponible();
 int buscador(int,int);
 int SumatoriadiaFinal(int);
 int buscarplato(int);

@@ -128,7 +128,3 @@ void RecaudacionPorPlato()
 }
 
 
-void CantMercaderiaDisponible()
-{
-
-}

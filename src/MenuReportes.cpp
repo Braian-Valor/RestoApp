@@ -7,7 +7,6 @@ void dibujarMenudeReportes()
     cout << " 1 - RECAUDACION ANUAL         " << endl;
     cout << " 2 - RECAUDACION DIARIA        " << endl;
     cout << " 3 - RECAUDACION POR PLATO     " << endl;
-    cout << " 4 - CANTIDAD MERCADERIA DISPONIBLE  " << endl;
     cout << " 0 - VOLVER AL MENU PRINCIPAL " << endl;
     cout << " ---------------------------- " << endl;
     cout << endl;
@@ -44,12 +43,6 @@ void MenuReportes()
         case 3:
         {
             RecaudacionPorPlato();
-        }
-        break;
-
-        case 4:
-        {
-            CantMercaderiaDisponible();
         }
         break;
         case 0:
