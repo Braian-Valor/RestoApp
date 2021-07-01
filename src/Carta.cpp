@@ -47,7 +47,6 @@ bool Carta::escribirEnDisco() {
     fclose(p);
     return escribio;
 }
-
 bool Carta::leerDeDisco(int pos) {
     bool leyo;
     FILE *p;

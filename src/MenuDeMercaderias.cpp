@@ -12,7 +12,7 @@ void dibujarMenuDeMercaderias(){
     cout << " ------------------------ " << endl;
     cout << " 1 - REGISTRAR MERCADERIA " << endl;
     cout << " 2 - MODIFICAR/ACTUALIZAR " << endl;
-    cout << " 3 - BAJA DE MERCADERIA   " << endl;
+    cout << " 3 - ELIMINAR             " << endl;
     cout << " 4 - LISTAR MERCADERIA    " << endl;
     cout << " 0 - SALIR DEL PROGRAMA   " << endl;
     cout << " ------------------------ " << endl;
@@ -25,7 +25,7 @@ void menuMercaderias(){
     bool salir=false;
     int opcion;
 
-    while(!salir) {
+    while(!salir){
         system("cls");
         dibujarMenuDeMercaderias();
         cout << "INGRESAR OPCION: ";
@@ -33,22 +33,24 @@ void menuMercaderias(){
         cin.ignore();
         system("cls");
 
-        switch(opcion) {
-            default: {
+        switch(opcion){
+            default:{
                 cout << "OPCION INCORRECTA";
             }break;
 
-            case 0: {
+            case 0:{
                 salir=true;
                 cout << "VOLVIENDO AL MENU PRINCIPAL..";
             }break;
 
             case 1:{
                 if(registrarMercaderia()==true){
+                    cout << endl;
                     cout << "MERCADERIA REGISTRADA CON EXITO";
                     cin.get();
                 }
                 else{
+                    cout << endl;
                     cout << "ERROR, NO SE PUDO REALIZAR LA REGISTRACION";
                     cin.get();
                 }
@@ -67,6 +69,7 @@ void menuMercaderias(){
                 cout << "NOMBRE: ";
                 fflush(stdin);
                 cin.getline(nombre,50);
+                cout << endl;
                 eliminarMercaderia(nombre);
             }break;
 
@@ -76,5 +79,4 @@ void menuMercaderias(){
         }
         cin.get();
     }
-
 }

@@ -1,7 +1,7 @@
 #ifndef MENUDECARTA_H_INCLUDED
 #define MENUDECARTA_H_INCLUDED
 
-/// PROTOTIPOS
+/// PROTOTIPOS DEL MENU DE CARTA
 void dibujarMenuDeCarta();
 void menuDeCarta();
 

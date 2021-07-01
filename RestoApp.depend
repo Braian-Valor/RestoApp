@@ -66,10 +66,9 @@
 
 1624852031 c:\users\braian\desktop\restoapp\include\persona.h
 
-1624852031 c:\users\braian\desktop\restoapp\include\mercaderias.h
-	"Fecha.h"
+1625101948 c:\users\braian\desktop\restoapp\include\mercaderias.h
 
-1624852031 source:c:\users\braian\desktop\restoapp\src\mercaderias.cpp
+1625101948 source:c:\users\braian\desktop\restoapp\src\mercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -248,9 +247,9 @@
 	"Fecha.h"
 	"DetalleVenta.h"
 
-1624852031 c:\users\braian\desktop\restoapp\include\carta.h
+1625103066 c:\users\braian\desktop\restoapp\include\carta.h
 
-1624852031 source:c:\users\braian\desktop\restoapp\src\carta.cpp
+1625103093 source:c:\users\braian\desktop\restoapp\src\carta.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -352,7 +351,7 @@
 1623262309 c:\users\braian\desktop\restoapp\include\ingresomercaderias.h
 	"Fecha.h"
 
-1624852031 source:c:\users\braian\desktop\restoapp\src\menudemercaderias.cpp
+1625102612 source:c:\users\braian\desktop\restoapp\src\menudemercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -363,7 +362,7 @@
 
 1624852031 c:\users\braian\desktop\restoapp\include\menudemercaderias.h
 
-1624852031 source:c:\users\braian\desktop\restoapp\src\funcionesmercaderias.cpp
+1625102891 source:c:\users\braian\desktop\restoapp\src\funcionesmercaderias.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -623,16 +622,16 @@
 
 1624135373 c:\users\braian\desktop\restoapp\include\funcionespedidos.h
 
-1624852031 source:c:\users\braian\desktop\restoapp\src\ingredientesdecarta.cpp
+1625103637 source:c:\users\braian\desktop\restoapp\src\ingredientesdecarta.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	"IngredientesDeCarta.h"
 
-1624852031 c:\users\braian\desktop\restoapp\include\ingredientesdecarta.h
+1625103637 c:\users\braian\desktop\restoapp\include\ingredientesdecarta.h
 
-1624993329 source:c:\users\braian\desktop\restoapp\src\funcionescarta.cpp
+1625105013 source:c:\users\braian\desktop\restoapp\src\funcionescarta.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -640,10 +639,11 @@
 	"FuncionesCarta.h"
 	"Carta.h"
 	"IngredientesDeCarta.h"
+	"Mercaderias.h"
 
-1624852031 c:\users\braian\desktop\restoapp\include\funcionescarta.h
+1625104556 c:\users\braian\desktop\restoapp\include\funcionescarta.h
 
-1624993300 source:c:\users\braian\desktop\restoapp\src\menudecarta.cpp
+1625104750 source:c:\users\braian\desktop\restoapp\src\menudecarta.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -651,7 +651,7 @@
 	<locale.h>
 	"FuncionesCarta.h"
 
-1624852031 c:\users\braian\desktop\restoapp\include\menudecarta.h
+1625103033 c:\users\braian\desktop\restoapp\include\menudecarta.h
 
 1624993096 source:c:\users\braian\desktop\restoapp\src\funcionesventas.cpp
 	<iostream>

@@ -6,6 +6,7 @@ using namespace std;
 #include "FuncionesCarta.h"
 #include "Carta.h"
 #include "IngredientesDeCarta.h"
+#include "Mercaderias.h"
 
 int contarRegistrosDeCarta(){
     int  pos=0, cont=0;
@@ -34,11 +35,20 @@ bool cargarDatosPlato(){
     cout << "NOMBRE: ";
     fflush(stdin);
     cin.getline(nombrePlato, 50);
+    while(nombrePlato[0]==00 || nombrePlato[0]==32){
+        cout << "NOMBRE: ";
+        fflush(stdin);
+        cin.getline(nombrePlato, 50);
+    }
     reg.setNombrePlato(nombrePlato);
 
     float precioPlato;
     cout << "PRECIO: ";
     cin >> precioPlato;
+    while(precioPlato<=0){
+        cout << "PRECIO: ";
+        cin >> precioPlato;
+    }
     reg.setPrecioPlato(precioPlato);
 
     bool estado=true;
@@ -78,8 +88,12 @@ bool actualizarPrecio(int nroPlato){
             cout << "--------------------" << endl;
             reg.Mostrar();
             cout << endl;
-            cout << "INGRESAR EL NUEVO PRECIO: ";
+            cout << "NUEVO PRECIO: ";
             cin >> precio;
+            while(precio<0){
+                cout << "NUEVO PRECIO: ";
+                cin >> precio;
+            }
             system("cls");
 
             fseek(p, ftell(p)-sizeof(Carta), 0);
@@ -93,21 +107,55 @@ bool actualizarPrecio(int nroPlato){
     return false;
 }
 
+bool buscarPlato(int nroPlato){
+    Carta reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        if(reg.getNroPlato()==nroPlato){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool buscarIDmercaderia(int IDmercaderia){
+    Mercaderias reg;
+    int pos=0;
+    while(reg.leerDeDisco(pos++)==true){
+        if(reg.getID()==IDmercaderia && reg.getEstado()!=false){
+            return true;
+        }
+    }
+    return false;
+}
+
 bool registrarIngredientesDePlato(){
     Ingredientes reg;
     int nroPlato;
     cout << "INGRESAR NRO PLATO: ";
     cin >> nroPlato;
+    while(nroPlato<=0 || buscarPlato(nroPlato)==false){
+        cout << "INGRESAR NRO PLATO: ";
+        cin >> nroPlato;
+    }
     reg.setNroPlato(nroPlato);
 
     int IDmercaderia;
     cout << "INGRESAR ID MERCADERIA: ";
     cin >> IDmercaderia;
+    while(IDmercaderia<=0 || buscarIDmercaderia(IDmercaderia)==false){
+        cout << "INGRESAR ID MERCADERIA: ";
+        cin >> IDmercaderia;
+    }
     reg.setIDmercaderia(IDmercaderia);
 
     float cant;
     cout << "INGRESAR CANTIDAD: ";
     cin >> cant;
+    while(cant<=0){
+        cout << "INGRESAR CANTIDAD: ";
+        cin >> cant;
+    }
     reg.setCant(cant);
 
     if(reg.escribirEnDisco()==true){

@@ -7,7 +7,6 @@ class Carta{
         char _nombrePlato[50];
         float _precioPlato;
         bool _estado;
-
     public:
         /// SETS
         void setNroPlato(int nroPlato);

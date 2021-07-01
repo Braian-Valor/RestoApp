@@ -6,6 +6,8 @@ int contarRegistrosDeCarta();
 bool cargarDatosPlato();
 bool registrarPlato();
 
+bool buscarIDmercaderia(int IDmercaderia);
+bool buscarPlato(int nroPlato);
 bool actualizarPrecio(int nroPlato);
 bool registrarIngredientesDePlato();
 void listarPlatos();

@@ -18,8 +18,7 @@ class Ingredientes{
         int getIDmercaderia();
         float getCant();
 
-        /// CARGAR Y MOSTRAR
-        void cargar();
+        /// MOSTRAR
         void mostrar();
 
         /// ARCHIVOS

@@ -23,16 +23,7 @@ int Ingredientes::getIDmercaderia(){return _IDmercaderia;}
 float Ingredientes::getCant(){return _cant;}
 
 
-/// CARGAR Y MOSTRAR
-void Ingredientes::cargar(){
-    cout << "NRO PLATO: ";
-    cin >> _nroPlato;
-    cout << "ID MERCADERIA: ";
-    cin >> _IDmercaderia;
-    cout << "CANT: ";
-    cin >> _cant;
-}
-
+/// MOSTRAR
 void Ingredientes::mostrar(){
     cout << "NRO PLATO: " << _nroPlato << endl;
     cout << "ID MERCADERIA: " << _IDmercaderia << endl;
@@ -52,7 +43,6 @@ bool Ingredientes::escribirEnDisco() {
     fclose(p);
     return escribio;
 }
-
 bool Ingredientes::leerDeDisco(int pos) {
     bool leyo;
     FILE *p;

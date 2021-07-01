@@ -34,25 +34,20 @@ bool cargarDatosMercaderia(){
     cout << "NOMBRE: ";
     fflush(stdin);
     cin.getline(nombre,50);
+    while(nombre[0]==00 || nombre[0]==32){
+        cout << "NOMBRE: ";
+        fflush(stdin);
+        cin.getline(nombre, 50);
+    }
     reg.setNombre(nombre);
-
-    Fecha fecha;
-    int dia, mes, anio;
-    cout << "FECHA DE VENCIMIENTO" << endl;
-    cout << "DIA: ";
-    cin >> dia;
-    fecha.setDia(dia);
-    cout << "MES: ";
-    cin >> mes;
-    fecha.setMes(mes);
-    cout << "AÑO: ";
-    cin >> anio;
-    fecha.setAnio(anio);
-    reg.setFechaVencimiento(fecha);
 
     float cantStock;
     cout << "CANTIDAD EN STOCK: ";
     cin >> cantStock;
+    while(!(cantStock>0)){
+        cout << "CANTIDAD EN STOCK: ";
+        cin >> cantStock;
+    }
     reg.setCantStock(cantStock);
 
     bool estado=true;
@@ -88,7 +83,7 @@ void modificarMercaderia(char *nombre){
     }
 
     while(fread(&reg, sizeof(Mercaderias), 1, p)==1){
-        if(strcmp(reg.getNombre(), nombre)==0){
+        if(strcmp(reg.getNombre(), nombre)==0 && reg.getEstado()!=false){
             while(!salir){
                 system("cls");
                 cout << "REGISTRO A MODIFICAR" << endl;
@@ -97,8 +92,7 @@ void modificarMercaderia(char *nombre){
                 cout << endl;
                 cout << " SELECCIONAR CAMPO A MODIFICAR " << endl;
                 cout << " ----------------------------- " << endl;
-                cout << " 1 - FECHA      " << endl;
-                cout << " 2 - CANT STOCK " << endl;
+                cout << " 1 - CANT STOCK " << endl;
                 cout << " 0 - SALIR    " << endl;
                 cout << endl;
                 cout << "OPCION: ";
@@ -116,30 +110,13 @@ void modificarMercaderia(char *nombre){
                     }break;
 
                     case 1:{
-                        Fecha fecha;
-                        int dia, mes, anio;
-                        cout << "INGRESAR FECHA" << endl;
-                        cout << "DIA: ";
-                        cin >> dia;
-                        fecha.setDia(dia);
-
-                        cout << "MES: ";
-                        cin >> mes;
-                        fecha.setMes(mes);
-
-                        cout << "AÑO: ";
-                        cin >> anio;
-                        fecha.setAnio(anio);
-
-                        fseek(p, ftell(p)-sizeof(Mercaderias), 0);
-                        reg.setFechaVencimiento(fecha);
-                        fwrite(&reg, sizeof(Mercaderias), 1, p);
-                    }break;
-
-                    case 2:{
                         float cantStock;
                         cout << "INGRESAR CANT STOCK: ";
                         cin >> cantStock;
+                        while(!(cantStock>0)){
+                            cout << "CANTIDAD EN STOCK: ";
+                            cin >> cantStock;
+                        }
 
                         reg.setCantStock(cantStock);
                         fseek(p, ftell(p)-sizeof(Mercaderias), 0);
@@ -165,13 +142,13 @@ void eliminarMercaderia(char *nombre){
     }
 
     while(fread(&reg, sizeof(Mercaderias), 1, p)==1){
-        if(strcmp(reg.getNombre(), nombre)==0){
+        if(strcmp(reg.getNombre(), nombre)==0 && reg.getEstado()!=false){
             fseek(p, ftell(p)-sizeof(Mercaderias), 0);
             reg.setEstado(false);
             bool escribio=fwrite(&reg, sizeof(Mercaderias), 1, p);
             fclose(p);
             if(escribio==true){
-                cout << "CLIENTE ELIMINADO";
+                cout << "MERCADERIA ELIMINADO";
                 cin.get();
                 return;
             }
@@ -179,6 +156,9 @@ void eliminarMercaderia(char *nombre){
 
     }
     fclose(p);
+    cout << "ERROR, NO EXISTE EL NOMBRE DE MERCADERIA";
+    cin.get();
+    return;
 }
 
 void listarMercaderias(){

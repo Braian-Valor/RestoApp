@@ -25,7 +25,7 @@ void menuDeCarta(){
     bool salir=false;
     int opcion;
 
-    while(!salir) {
+    while(!salir){
         system("cls");
         dibujarMenuDeCarta();
         cout << "INGRESAR OPCION: ";
@@ -33,22 +33,24 @@ void menuDeCarta(){
         cin.ignore();
         system("cls");
 
-        switch(opcion) {
-            default: {
+        switch(opcion){
+            default:{
                 cout << "OPCION INCORRECTA";
             }break;
 
-            case 0: {
+            case 0:{
                 salir=true;
                 cout << "VOLVIENDO AL MENU PRINCIPAL..";
             }break;
 
-            case 1: {
+            case 1:{
                 if(registrarPlato()==true){
+                    cout << endl;
                     cout << "PLATO REGISTRADO" << endl;
                     cin.get();
                 }
                 else{
+                    cout << endl;
                     cout << "ERROR, NO SE PUDO REGISTRAR EL PLATO" << endl;
                     cin.get();
                 }
@@ -59,10 +61,12 @@ void menuDeCarta(){
                 cout << "INGRESAR NRO PLATO: ";
                 cin >> nroPlato;
                 if(actualizarPrecio(nroPlato)==true){
+                    cout << endl;
                     cout << "PRECIO ACTUALIZADO" << endl;
                     cin.get();
                 }
                 else{
+                    cout << endl;
                     cout << "ERROR, NO SE ENCONTRO EL PLATO" << endl;
                     cin.get();
                 }
@@ -70,10 +74,12 @@ void menuDeCarta(){
 
             case 3:{
                 if(registrarIngredientesDePlato()==true){
+                    cout << endl;
                     cout << "INGREDIENTES DE PLATO REGISTRADO" << endl;
                     cin.get();
                 }
                 else{
+                    cout << endl;
                     cout << "ERROR, NO SE PUDO REGISTRAR EL INGREDIENTE DEL PLATO" << endl;
                     cin.get();
                 }
