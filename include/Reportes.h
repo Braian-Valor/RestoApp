@@ -16,8 +16,10 @@ void RecaudacionAnual();
 void RecaudacionDiaria();
 void RecaudacionPorPlato();
 void CantMercaderiaDisponible();
-int SumatoriamesFinal(int);
+int buscador(int,int);
 int SumatoriadiaFinal(int);
 int buscarplato(int);
+
+
 
 #endif // REPORTES_H_INCLUDED

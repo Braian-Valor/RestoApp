@@ -173,16 +173,14 @@ void ModificacionMesa()
     repeticion=buscarNroMesa(NumMesa);
     while(NumMesa<0 || repeticion==-1)
     {
+
         system("cls");
         int pos=0;
         cout<< "Numero de mesa negativo o inexistente "<<endl;
         cout<< "Mesas Libres para Modificar: "<<endl;
         while(obj.leerDeDisco(pos++))
         {
-            if(obj.getEstado()==true)
-            {
-                obj.Mostrar();
-            }
+            obj.Mostrar();
         }
         cout<< "Ingrese nuevamente numero de mesa: "<<endl;
         cin>>NumMesa;
@@ -200,7 +198,7 @@ void ModificacionMesa()
     }
     while(fread(&reg, sizeof(Mesas), 1, p)==1)
     {
-        if(reg.getNroMesa()==NumMesa)
+        if(reg.getNroMesa()==NumMesa && reg.getMesaOcupada()!=false)
         {
             while(!salir)
             {
@@ -230,14 +228,11 @@ void ModificacionMesa()
                     {
                         int pos=0;
                         system("cls");
-                        cout<< "Valor Ingresado Negativo o Numero de mesa Existentes en el archivo"<<endl;
+                        cout<< "Valor Ingresado Negativo o Numero de mesa inexistente en el archivo"<<endl;
                         cout<< "Mesas Existentes: "<<endl;
                         while(obj.leerDeDisco(pos++))
                         {
-                            if(obj.getEstado()==true)
-                            {
-                                obj.Mostrar();
-                            }
+                            obj.Mostrar();
                         }
                         cout<< "Favor de ingresar un valor valido: "<<endl;
                         cin>>NuevoNum;
@@ -264,15 +259,26 @@ void ModificacionMesa()
                 case 3:
                 {
                     bool Estadonuevo;
-                    cout<< "Ingrese el numero 1 si la mesa ya fue desocupada:"<<endl;
+                    cout<< "Ingrese el numero 1 si la mesa ya fue desocupada o 0 si quiere ocupar la mesa:"<<endl;
                     cin>>Estadonuevo;
-                    while(Estadonuevo!=1)
+                    while(!(Estadonuevo==1 || Estadonuevo==0))
                     {
                         cout<< "Valor inadmisible presione 1 si desea cambiar el valor: "<<endl;
                         cin>>Estadonuevo;
                     }
+                    if(Estadonuevo==true)
+                    {
+                        cout<< "La mesa se ha desocupado"<<endl;
+                        cin.get();
+                    }
+                    else
+                    {
+                        cout<< "La mesa ha sido ocupada"<<endl;
+                        cin.get();
+                    }
                     reg.setEstado(Estadonuevo);
                     reg.ModificarValorMesa(repeticion);
+
                 }
                 break;
                 case 0:

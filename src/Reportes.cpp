@@ -1,44 +1,47 @@
 #include "Reportes.h"
 
-int SumatoriamesFinal(int *vec)
+#include "Reportes.h"
+
+int buscador(int anio,int mes)
 {
-    int suma=0;
-    for(int i=0; i<12; i++)
+    Ventas obj;
+    int pos=0,suma=0;
+    while(obj.leerDeDisco(pos++))
     {
-        suma+=vec[i];
+        if(obj.getFechaVenta().getAnio()==anio && obj.getFechaVenta().getMes()==mes)
+        {
+            suma+=obj.getMontoTotal();
+        }
     }
     return suma;
 }
 
 
 
+
 void RecaudacionAnual()
 {
-    int vec[12]= {},pos=0,suma;
+    int suma,anio,mes;
     Ventas reg;
-    Fecha obj;
-    while(reg.leerDeDisco(pos++))
+    cout<< "Ingrese el anio el cual desea buscar: "<<endl;
+    cin>>anio;
+    while (anio<0)
     {
-        if(reg.getFechaVenta().getAnio()==obj.getAnio())
-        {
-            vec[reg.getFechaVenta().getMes()-1]+=reg.getMontoTotal();
-        }
+        cout<< "Valor ingresado negativo, favor de ingresar un anio valido: "<<endl;
+        cin>>anio;
     }
-    for(int i=0; i<12; i++)
+    cout<< "Ingrese el mes el cual desea buscar: "<<endl;
+    cin>>mes;
+    while(mes<0)
     {
-        cout<<"MES:"<< i+1 <<" " << "RECAUDACION: "<< "$" <<vec[i]<<endl;
+        cout<< "Valor ingresado negativo, favor de ingresar un mes valido: "<<endl;
+        cin>>mes;
     }
-    suma=SumatoriamesFinal(vec);
-    if (suma>0)
-    {
-        cout<<endl;
-        cout<< "RECAUDACION ANUAL TOTAL: "<<endl;
-        cout<<"$"<<suma;
-    }
-    else
-    {
-        cout<< "NO HAY NINGUNA RECAUDACION"<<endl;
-    }
+    suma=buscador(anio,mes);
+    cout<< "La suma vendida de ese mes y anio son: "<<endl;
+    cout<< suma;
+    cin.get();
+
 }
 
 int SumatoriadiaFinal(int *vec)
@@ -123,6 +126,8 @@ void RecaudacionPorPlato()
     cout<<"$"<<recaudacion;
     cin.get();
 }
+
+
 void CantMercaderiaDisponible()
 {
 
